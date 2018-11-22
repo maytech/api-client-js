@@ -1,0 +1,9 @@
+# QuatrixApi.UserSignupReq
+
+## Properties
+Name | Type | Description | Notes
+------------ | ------------- | ------------- | -------------
+**email** | **String** |  | 
+**password** | **String** |  | 
+
+

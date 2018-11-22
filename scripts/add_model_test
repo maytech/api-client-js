@@ -1,0 +1,60 @@
+#!/usr/bin/env node
+
+var fs = require('fs');
+
+var COMMENTED_LINES_NUMBER = 3;
+var TEST_FOLDER = __dirname + '/../test/model/';
+
+var propertyRegExp = /\(base name: "(.*)"\)/;
+var instanceRegExp = /should create an instance of (.*)\'/;
+
+fs.readdir(TEST_FOLDER, function(err, files) {
+  if (err) {
+    console.error('READDIR ERROR:', err);
+    return;
+  }
+  files.forEach(file => {
+    var lines = [];
+    var skip = 0;
+    var lineToAdd = null;
+
+    var buffer = fs.readFileSync(TEST_FOLDER + file, 'utf8');
+
+    buffer.split('\n').forEach(line => {
+      if (skip) {
+        skip -= 1;
+        if (skip === 0) {
+          lines.push(lineToAdd);
+          lineToAdd = null;
+        }
+      } else {
+        var propertyMatch = line.match(propertyRegExp);
+        var instanceMatch = line.match(instanceRegExp);
+
+        if (propertyMatch) {
+          lineToAdd =
+            '      expect(instance).to.have.property("' +
+            propertyMatch[1] +
+            '");';
+          skip = COMMENTED_LINES_NUMBER;
+        } else if (instanceMatch) {
+          lineToAdd =
+            '      expect(instance).to.be.a(QuatrixApi.' +
+            instanceMatch[1] +
+            ');';
+          skip = COMMENTED_LINES_NUMBER;
+        }
+
+        lines.push(line);
+      }
+    });
+
+    fs.writeFile(TEST_FOLDER + file, lines.join('\n'), 'utf8', function(err) {
+      if (err) {
+        console.error('WRITEFILE ERROR', TEST_FOLDER + file, err);
+        return;
+      }
+      console.log(TEST_FOLDER + file + ' modified');
+    });
+  });
+});
