@@ -4,16 +4,16 @@ All URIs are relative to *https://api.quatrix.it/api/1.0*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**billingUpgradePost**](BillingApi.md#billingUpgradePost) | **POST** /billing/upgrade | Upgrade
+[**billingUpgradePost**](BillingApi.md#billingUpgradePost) | **POST** /billing/upgrade | Upgrade the user&#39;s account
 
 
 <a name="billingUpgradePost"></a>
 # **billingUpgradePost**
 > BillingUpgradeResp billingUpgradePost(body)
 
-Upgrade
+Upgrade the user&#39;s account
 
-Upgrade 
+Upgrade the user&#39;s account. 
 
 ### Example
 ```javascript

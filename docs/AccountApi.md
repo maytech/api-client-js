@@ -4,20 +4,20 @@ All URIs are relative to *https://api.quatrix.it/api/1.0*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**accountInfoGet**](AccountApi.md#accountInfoGet) | **GET** /account/info | Account info
+[**accountInfoGet**](AccountApi.md#accountInfoGet) | **GET** /account/info | Get account usage info
 [**accountListGet**](AccountApi.md#accountListGet) | **GET** /account/list | List user accounts
-[**accountLogoGet**](AccountApi.md#accountLogoGet) | **GET** /account/logo | Account logo
-[**accountMetadataGet**](AccountApi.md#accountMetadataGet) | **GET** /account/metadata | Account metadata
-[**accountRolesGet**](AccountApi.md#accountRolesGet) | **GET** /account/roles | Account roles
+[**accountLogoGet**](AccountApi.md#accountLogoGet) | **GET** /account/logo | Get account logo
+[**accountMetadataGet**](AccountApi.md#accountMetadataGet) | **GET** /account/metadata | Get account metadata
+[**accountRolesGet**](AccountApi.md#accountRolesGet) | **GET** /account/roles | Call users of the account
 
 
 <a name="accountInfoGet"></a>
 # **accountInfoGet**
 > AccountInfoResp accountInfoGet()
 
-Account info
+Get account usage info
 
-Account usage info 
+Retrieve details of the account e.g. service settings, virus scan details, available and used storage, set automations, etc. 
 
 ### Example
 ```javascript
@@ -60,11 +60,11 @@ This endpoint does not need any parameter.
 
 <a name="accountListGet"></a>
 # **accountListGet**
-> [AccountListRespItems] accountListGet()
+> [Object] accountListGet()
 
 List user accounts
 
-List user accounts 
+Get the list with user accounts displaying the ID, host name, plan and status. 
 
 ### Example
 ```javascript
@@ -94,7 +94,7 @@ This endpoint does not need any parameter.
 
 ### Return type
 
-[**[AccountListRespItems]**](AccountListRespItems.md)
+**[Object]**
 
 ### Authorization
 
@@ -109,9 +109,9 @@ This endpoint does not need any parameter.
 # **accountLogoGet**
 > accountLogoGet()
 
-Account logo
+Get account logo
 
-Returns account logo body 
+Retrieve the logo set for the current account. 
 
 ### Example
 ```javascript
@@ -149,9 +149,9 @@ No authorization required
 # **accountMetadataGet**
 > AccountMetadataResp accountMetadataGet()
 
-Account metadata
+Get account metadata
 
-Get Account Public Metadata 
+Retrieve general settings for the account e.g. status of the user, identity providers, language, set logo and banner text. 
 
 ### Example
 ```javascript
@@ -187,11 +187,11 @@ No authorization required
 
 <a name="accountRolesGet"></a>
 # **accountRolesGet**
-> [AccountRolesRespItems] accountRolesGet()
+> [Object] accountRolesGet()
 
-Account roles
+Call users of the account
 
-List account roles 
+Get the list of the current account users with their IDs, names and emails 
 
 ### Example
 ```javascript
@@ -221,7 +221,7 @@ This endpoint does not need any parameter.
 
 ### Return type
 
-[**[AccountRolesRespItems]**](AccountRolesRespItems.md)
+**[Object]**
 
 ### Authorization
 

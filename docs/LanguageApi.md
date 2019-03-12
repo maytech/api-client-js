@@ -4,17 +4,17 @@ All URIs are relative to *https://api.quatrix.it/api/1.0*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**languagesDefaultGet**](LanguageApi.md#languagesDefaultGet) | **GET** /languages/default | Default language
-[**languagesGet**](LanguageApi.md#languagesGet) | **GET** /languages | List languages
+[**languagesDefaultGet**](LanguageApi.md#languagesDefaultGet) | **GET** /languages/default | Get default language
+[**languagesGet**](LanguageApi.md#languagesGet) | **GET** /languages | List available languages
 
 
 <a name="languagesDefaultGet"></a>
 # **languagesDefaultGet**
 > LanguagesDefaultResp languagesDefaultGet()
 
-Default language
+Get default language
 
-Get default language 
+Get the default language ID. English (GB) is set as the default language for Quatrix. 
 
 ### Example
 ```javascript
@@ -50,11 +50,11 @@ No authorization required
 
 <a name="languagesGet"></a>
 # **languagesGet**
-> [LanguagesRespItems] languagesGet()
+> [Object] languagesGet()
 
-List languages
+List available languages
 
-List languages 
+Get the list of languages that can be set for the account. English and Chinese are currently available. 
 
 ### Example
 ```javascript
@@ -84,7 +84,7 @@ This endpoint does not need any parameter.
 
 ### Return type
 
-[**[LanguagesRespItems]**](LanguagesRespItems.md)
+**[Object]**
 
 ### Authorization
 

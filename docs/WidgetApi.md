@@ -4,18 +4,18 @@ All URIs are relative to *https://api.quatrix.it/api/1.0*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**widgetFinalizeUploadIdGet**](WidgetApi.md#widgetFinalizeUploadIdGet) | **GET** /widget/finalize-upload/{id} | Finalize widget chunked file upload
-[**widgetMetadataIdGet**](WidgetApi.md#widgetMetadataIdGet) | **GET** /widget/metadata/{id} | Widget metadata
-[**widgetUploadLinkIdPost**](WidgetApi.md#widgetUploadLinkIdPost) | **POST** /widget/upload-link/{id} | Widget upload link
+[**widgetFinalizeUploadIdGet**](WidgetApi.md#widgetFinalizeUploadIdGet) | **GET** /widget/finalize-upload/{id} | Finalize chunked upload of the widget
+[**widgetMetadataIdGet**](WidgetApi.md#widgetMetadataIdGet) | **GET** /widget/metadata/{id} | Get all widget metadata
+[**widgetUploadLinkIdPost**](WidgetApi.md#widgetUploadLinkIdPost) | **POST** /widget/upload-link/{id} | Get widget upload link
 
 
 <a name="widgetFinalizeUploadIdGet"></a>
 # **widgetFinalizeUploadIdGet**
 > WidgetFinalizeUploadResp widgetFinalizeUploadIdGet(id)
 
-Finalize widget chunked file upload
+Finalize chunked upload of the widget
 
-Finalize widget chunked file upload 
+Complete the chunked upload of the widget. 
 
 ### Example
 ```javascript
@@ -59,9 +59,9 @@ No authorization required
 # **widgetMetadataIdGet**
 > IdResp widgetMetadataIdGet(id)
 
-Widget metadata
+Get all widget metadata
 
-Get widget metadata 
+Retrieve available metadata of the widget. 
 
 ### Example
 ```javascript
@@ -105,9 +105,9 @@ No authorization required
 # **widgetUploadLinkIdPost**
 > WidgetUploadLinkResp widgetUploadLinkIdPost(id, opts)
 
-Widget upload link
+Get widget upload link
 
-Get widget upload link 
+Retrieve a link for uploading the widget. 
 
 ### Example
 ```javascript

@@ -4,35 +4,34 @@ All URIs are relative to *https://api.quatrix.it/api/1.0*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**fileAddTagIdPost**](FileApi.md#fileAddTagIdPost) | **POST** /file/add-tag/{id} | Add file tag
+[**fileAddTagIdPost**](FileApi.md#fileAddTagIdPost) | **POST** /file/add-tag/{id} | Add a file tag
 [**fileCopyPost**](FileApi.md#fileCopyPost) | **POST** /file/copy | Copy files
 [**fileCsvIdGet**](FileApi.md#fileCsvIdGet) | **GET** /file/csv/{id} | Download CSV file with Folder Content
 [**fileDeletePost**](FileApi.md#fileDeletePost) | **POST** /file/delete | Delete files
-[**fileDiffIdGet**](FileApi.md#fileDiffIdGet) | **GET** /file/diff/{id} | File diff
+[**fileDiffIdGet**](FileApi.md#fileDiffIdGet) | **GET** /file/diff/{id} | Display changes of the file
 [**fileDownloadIdGet**](FileApi.md#fileDownloadIdGet) | **GET** /file/download/{id} | Download file
 [**fileDownloadLinkPost**](FileApi.md#fileDownloadLinkPost) | **POST** /file/download-link | Get download link
 [**fileInfoIdGet**](FileApi.md#fileInfoIdGet) | **GET** /file/info/{id} | Get file info
-[**fileMakedirPost**](FileApi.md#fileMakedirPost) | **POST** /file/makedir | Create new folder
-[**fileMetadataGet**](FileApi.md#fileMetadataGet) | **GET** /file/metadata | Get all file metadata
-[**fileMetadataIdGet**](FileApi.md#fileMetadataIdGet) | **GET** /file/metadata/{id} | Get file metadata
-[**fileMetadataPost**](FileApi.md#fileMetadataPost) | **POST** /file/metadata | Set file metadata
-[**fileModifyPost**](FileApi.md#fileModifyPost) | **POST** /file/modify | Get file modify link
+[**fileMakedirPost**](FileApi.md#fileMakedirPost) | **POST** /file/makedir | Create a new folder
+[**fileMetadataGet**](FileApi.md#fileMetadataGet) | **GET** /file/metadata | Get metadata of files
+[**fileMetadataIdGet**](FileApi.md#fileMetadataIdGet) | **GET** /file/metadata/{id} | Get all file metadata
+[**fileMetadataPost**](FileApi.md#fileMetadataPost) | **POST** /file/metadata | Modify file metadata
+[**fileModifyPost**](FileApi.md#fileModifyPost) | **POST** /file/modify | Get file modification link
 [**fileMovePost**](FileApi.md#fileMovePost) | **POST** /file/move | Move files
-[**filePreviewIdGet**](FileApi.md#filePreviewIdGet) | **GET** /file/preview/{id} | File preview
-[**fileRenameIdPost**](FileApi.md#fileRenameIdPost) | **POST** /file/rename/{id} | Rename file or folder
+[**filePreviewIdGet**](FileApi.md#filePreviewIdGet) | **GET** /file/preview/{id} | Get a file preview
+[**fileRenameIdPost**](FileApi.md#fileRenameIdPost) | **POST** /file/rename/{id} | Rename a file
 [**fileSearchPost**](FileApi.md#fileSearchPost) | **POST** /file/search | Search files
 [**fileSizeIdGet**](FileApi.md#fileSizeIdGet) | **GET** /file/size/{id} | Get file size
-[**fileTagsIdGet**](FileApi.md#fileTagsIdGet) | **GET** /file/tags/{id} | File tags
-[**fileWopiTokenIdGet**](FileApi.md#fileWopiTokenIdGet) | **GET** /file/wopi-token/{id} | Get wopi token for file
+[**fileTagsIdGet**](FileApi.md#fileTagsIdGet) | **GET** /file/tags/{id} | Get a list of file tags
 
 
 <a name="fileAddTagIdPost"></a>
 # **fileAddTagIdPost**
 > FileTagResp fileAddTagIdPost(id, body)
 
-Add file tag
+Add a file tag
 
-Add tag to file 
+Add a tag to filter the file list. 
 
 ### Example
 ```javascript
@@ -88,7 +87,7 @@ Name | Type | Description  | Notes
 
 Copy files
 
-Copy files 
+Creates a copy of a file or a folder. The original version of the file will not be changed. On success 202 response it returns “job_id”. To check the result, see the API call “job/status\&quot;. 
 
 ### Example
 ```javascript
@@ -141,7 +140,7 @@ Name | Type | Description  | Notes
 
 Download CSV file with Folder Content
 
-Download CSV file content with Folder Content. 
+Return CSV file with information containing file metadata. It contains the path for each file displaying the hierarchy of files. This API returns the content-type: ”raw\&quot;. 
 
 ### Example
 ```javascript
@@ -194,7 +193,7 @@ Name | Type | Description  | Notes
 
 Delete files
 
-Delete number of files 
+Move a file or folder to Trash. If you delete less than 10 files, it returns 200 and the IDs of the deleted files. In case you delete more than 10 files, the API returns 202 response. 
 
 ### Example
 ```javascript
@@ -245,9 +244,9 @@ Name | Type | Description  | Notes
 # **fileDiffIdGet**
 > FileDiffResp fileDiffIdGet(id, from, opts)
 
-File diff
+Display changes of the file
 
-Get file changes diff 
+Get file changes for specified preiod. 
 
 ### Example
 ```javascript
@@ -303,11 +302,11 @@ Name | Type | Description  | Notes
 
 <a name="fileDownloadIdGet"></a>
 # **fileDownloadIdGet**
-> fileDownloadIdGet(id, )
+> fileDownloadIdGet(id)
 
 Download file
 
-Download file content 
+Download a file or files by given ID. Multiple file download returns files in Zip format. 
 
 ### Example
 ```javascript
@@ -322,7 +321,7 @@ api_key.apiKey = 'YOUR API KEY';
 
 var apiInstance = new QuatrixApi.FileApi();
 
-var id = "id_example"; // String | ID of a file
+var id = "id_example"; // String | ID of a file download link
 
 
 var callback = function(error, data, response) {
@@ -332,14 +331,14 @@ var callback = function(error, data, response) {
     console.log('API called successfully.');
   }
 };
-apiInstance.fileDownloadIdGet(id, , callback);
+apiInstance.fileDownloadIdGet(id, callback);
 ```
 
 ### Parameters
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **id** | [**String**](.md)| ID of a file | 
+ **id** | [**String**](.md)| ID of a file download link | 
 
 ### Return type
 
@@ -360,7 +359,7 @@ null (empty response body)
 
 Get download link
 
-Get files download link 
+Get a unique key for downloading files. 
 
 ### Example
 ```javascript
@@ -413,7 +412,7 @@ Name | Type | Description  | Notes
 
 Get file info
 
-Get file info 
+Retrieve the file information by the specified ID. 
 
 ### Example
 ```javascript
@@ -464,9 +463,9 @@ Name | Type | Description  | Notes
 # **fileMakedirPost**
 > FileResp fileMakedirPost(body)
 
-Create new folder
+Create a new folder
 
-Create new folder 
+Create a new folder 
 
 ### Example
 ```javascript
@@ -517,9 +516,9 @@ Name | Type | Description  | Notes
 # **fileMetadataGet**
 > FileMetadataGetResp fileMetadataGet(opts)
 
-Get all file metadata
+Get metadata of files
 
-Get all file metadata in current user home folder 
+Get information about files in the current User Home folder. 
 
 ### Example
 ```javascript
@@ -571,9 +570,9 @@ Name | Type | Description  | Notes
 # **fileMetadataIdGet**
 > FileMetadataGetResp fileMetadataIdGet(id, , opts)
 
-Get file metadata
+Get all file metadata
 
-Get file metadata 
+Retrieve all metadata associated with a given file. If ID endpoint is not provided, get the metadata of a current Use Home folder. 
 
 ### Example
 ```javascript
@@ -628,9 +627,9 @@ Name | Type | Description  | Notes
 # **fileMetadataPost**
 > FileMetadataPostResp fileMetadataPost(body)
 
-Set file metadata
+Modify file metadata
 
-Set file metadata 
+Update file metadata with the given payload. 
 
 ### Example
 ```javascript
@@ -681,9 +680,9 @@ Name | Type | Description  | Notes
 # **fileModifyPost**
 > FileModifyResp fileModifyPost(body)
 
-Get file modify link
+Get file modification link
 
-Get file modify link 
+Get file modification link 
 
 ### Example
 ```javascript
@@ -736,7 +735,7 @@ Name | Type | Description  | Notes
 
 Move files
 
-Move files 
+Move a file or folder from one location to another. 
 
 ### Example
 ```javascript
@@ -787,9 +786,9 @@ Name | Type | Description  | Notes
 # **filePreviewIdGet**
 > FilePreviewResp filePreviewIdGet(id, )
 
-File preview
+Get a file preview
 
-Get file preview metadata 
+Retrieve a file preview by the given ID of the file. 
 
 ### Example
 ```javascript
@@ -840,9 +839,9 @@ Name | Type | Description  | Notes
 # **fileRenameIdPost**
 > FileRenameResp fileRenameIdPost(id, body)
 
-Rename file or folder
+Rename a file
 
-Rename file or folder 
+Change a file name. 
 
 ### Example
 ```javascript
@@ -898,7 +897,7 @@ Name | Type | Description  | Notes
 
 Search files
 
-Search files 
+Search any file by the given directory. 
 
 ### Example
 ```javascript
@@ -951,7 +950,7 @@ Name | Type | Description  | Notes
 
 Get file size
 
-Get file size 
+Get details about the file size by the given ID. 
 
 ### Example
 ```javascript
@@ -1002,9 +1001,9 @@ Name | Type | Description  | Notes
 # **fileTagsIdGet**
 > [FileTagResp] fileTagsIdGet(id, )
 
-File tags
+Get a list of file tags
 
-List file tags 
+Retrieve a list of available file tags. 
 
 ### Example
 ```javascript
@@ -1041,59 +1040,6 @@ Name | Type | Description  | Notes
 ### Return type
 
 [**[FileTagResp]**](FileTagResp.md)
-
-### Authorization
-
-[api_key](../README.md#api_key)
-
-### HTTP request headers
-
- - **Content-Type**: application/json
- - **Accept**: application/json
-
-<a name="fileWopiTokenIdGet"></a>
-# **fileWopiTokenIdGet**
-> IdResp fileWopiTokenIdGet(id, )
-
-Get wopi token for file
-
-Get wopi token for file 
-
-### Example
-```javascript
-var QuatrixApi = require('quatrix_api');
-var defaultClient = QuatrixApi.ApiClient.instance;
-
-// Configure API key authorization: api_key
-var api_key = defaultClient.authentications['api_key'];
-api_key.apiKey = 'YOUR API KEY';
-// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-//api_key.apiKeyPrefix = 'Token';
-
-var apiInstance = new QuatrixApi.FileApi();
-
-var id = "id_example"; // String | ID of a file
-
-
-var callback = function(error, data, response) {
-  if (error) {
-    console.error(error);
-  } else {
-    console.log('API called successfully. Returned data: ' + data);
-  }
-};
-apiInstance.fileWopiTokenIdGet(id, , callback);
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **id** | [**String**](.md)| ID of a file | 
-
-### Return type
-
-[**IdResp**](IdResp.md)
 
 ### Authorization
 

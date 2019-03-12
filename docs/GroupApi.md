@@ -4,19 +4,19 @@ All URIs are relative to *https://api.quatrix.it/api/1.0*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**contactGroupGet**](GroupApi.md#contactGroupGet) | **GET** /contact/group | All contact groups
-[**groupGet**](GroupApi.md#groupGet) | **GET** /group | List user groups
-[**groupMetadataIdGet**](GroupApi.md#groupMetadataIdGet) | **GET** /group/metadata/{id} | Group metadata
-[**userGroupGet**](GroupApi.md#userGroupGet) | **GET** /user/group | All user groups
+[**contactGroupGet**](GroupApi.md#contactGroupGet) | **GET** /contact/group | List available contact groups.
+[**groupGet**](GroupApi.md#groupGet) | **GET** /group | List available user groups
+[**groupMetadataIdGet**](GroupApi.md#groupMetadataIdGet) | **GET** /group/metadata/{id} | Get group metadata
+[**userGroupGet**](GroupApi.md#userGroupGet) | **GET** /user/group | List all user groups
 
 
 <a name="contactGroupGet"></a>
 # **contactGroupGet**
-> [ContactGroupRespItems] contactGroupGet()
+> [Object] contactGroupGet()
 
-All contact groups
+List available contact groups.
 
-List all contact groups 
+Get a list of available contact groups. 
 
 ### Example
 ```javascript
@@ -46,7 +46,7 @@ This endpoint does not need any parameter.
 
 ### Return type
 
-[**[ContactGroupRespItems]**](ContactGroupRespItems.md)
+**[Object]**
 
 ### Authorization
 
@@ -61,9 +61,9 @@ This endpoint does not need any parameter.
 # **groupGet**
 > [GroupResp] groupGet()
 
-List user groups
+List available user groups
 
-List user groups 
+Get a list of available contact groups. 
 
 ### Example
 ```javascript
@@ -108,9 +108,9 @@ This endpoint does not need any parameter.
 # **groupMetadataIdGet**
 > GroupResp groupMetadataIdGet(id)
 
-Group metadata
+Get group metadata
 
-Get group metadata 
+Retrieve information about the group by the specified group ID. 
 
 ### Example
 ```javascript
@@ -161,9 +161,9 @@ Name | Type | Description  | Notes
 # **userGroupGet**
 > [Group] userGroupGet()
 
-All user groups
+List all user groups
 
-List all user groups 
+Retrieve a list of all user groups that can be set for users. 
 
 ### Example
 ```javascript

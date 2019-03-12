@@ -4,11 +4,11 @@ All URIs are relative to *https://api.quatrix.it/api/1.0*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**profile2faGenerateGet**](ProfileApi.md#profile2faGenerateGet) | **GET** /profile/2fa/generate | Generate new 2fa code
-[**profileGet**](ProfileApi.md#profileGet) | **GET** /profile | Profile metadata
-[**profileInfoGet**](ProfileApi.md#profileInfoGet) | **GET** /profile/info | Additional profile info
-[**profileRemoveMfaPost**](ProfileApi.md#profileRemoveMfaPost) | **POST** /profile/remove-mfa | Remove MFA for account
-[**profileSetMfaPost**](ProfileApi.md#profileSetMfaPost) | **POST** /profile/set-mfa | Set MFA enabled for account
+[**profile2faGenerateGet**](ProfileApi.md#profile2faGenerateGet) | **GET** /profile/2fa/generate | Generate a new 2FA code
+[**profileGet**](ProfileApi.md#profileGet) | **GET** /profile | Get profile metadata
+[**profileInfoGet**](ProfileApi.md#profileInfoGet) | **GET** /profile/info | Retrieve additional profile info
+[**profileRemoveMfaPost**](ProfileApi.md#profileRemoveMfaPost) | **POST** /profile/remove-mfa | Disable MFA for the logged-in user
+[**profileSetMfaPost**](ProfileApi.md#profileSetMfaPost) | **POST** /profile/set-mfa | Enable MFA for the logged-in user
 [**profileSetPasswordPost**](ProfileApi.md#profileSetPasswordPost) | **POST** /profile/set-password | Change profile password
 [**profileSetPost**](ProfileApi.md#profileSetPost) | **POST** /profile/set | Update profile metadata
 
@@ -17,9 +17,9 @@ Method | HTTP request | Description
 # **profile2faGenerateGet**
 > profile2faGenerateGet()
 
-Generate new 2fa code
+Generate a new 2FA code
 
-Generate new 2fa code QR code 
+Generate a new verification code for 2FA with QR code. 
 
 ### Example
 ```javascript
@@ -64,9 +64,9 @@ null (empty response body)
 # **profileGet**
 > ProfileResp profileGet()
 
-Profile metadata
+Get profile metadata
 
-Get profile metadata 
+Retrieve profile information of the current user. 
 
 ### Example
 ```javascript
@@ -111,9 +111,9 @@ This endpoint does not need any parameter.
 # **profileInfoGet**
 > ProfileInfoResp profileInfoGet()
 
-Additional profile info
+Retrieve additional profile info
 
-Get additional profile info 
+Get additional details about the account e.g. number of used and available user licenses. 
 
 ### Example
 ```javascript
@@ -158,9 +158,9 @@ This endpoint does not need any parameter.
 # **profileRemoveMfaPost**
 > ProfileRemoveMfaResp profileRemoveMfaPost(body)
 
-Remove MFA for account
+Disable MFA for the logged-in user
 
-Remove MFA for account if it was not forced by admin 
+Trun off MFA (multifactor authentication) for the user who requested 2FA deactivation while editing their profile. This operation is possible if it was not forced by the administrator. 
 
 ### Example
 ```javascript
@@ -211,9 +211,9 @@ Name | Type | Description  | Notes
 # **profileSetMfaPost**
 > ProfileSetMfaResp profileSetMfaPost(body)
 
-Set MFA enabled for account
+Enable MFA for the logged-in user
 
-Set multi factor autorization method (MFA) enabled for account 
+Turn on MFA (multifactor authentication) for the user who requested 2FA activation while editing their profile. MFA adds an additional secure step on the way to log in to the account by using one more authentication method beyond the email and password. 
 
 ### Example
 ```javascript
@@ -266,7 +266,7 @@ Name | Type | Description  | Notes
 
 Change profile password
 
-Change profile password 
+Change the account password for the logged-in user. 
 
 ### Example
 ```javascript
@@ -319,7 +319,7 @@ Name | Type | Description  | Notes
 
 Update profile metadata
 
-Update profile metadata 
+Edit profile information of the current user including name, email, language and message signature. 
 
 ### Example
 ```javascript

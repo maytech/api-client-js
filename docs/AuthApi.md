@@ -4,20 +4,20 @@ All URIs are relative to *https://api.quatrix.it/api/1.0*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**sessionKeepaliveGet**](AuthApi.md#sessionKeepaliveGet) | **GET** /session/keepalive | Keepalive
-[**sessionLoginGet**](AuthApi.md#sessionLoginGet) | **GET** /session/login | Login and get session ID
-[**sessionLoginPost**](AuthApi.md#sessionLoginPost) | **POST** /session/login | MFA
-[**sessionLogoutGet**](AuthApi.md#sessionLogoutGet) | **GET** /session/logout | Logout
-[**sessionUnblockCaptchaPost**](AuthApi.md#sessionUnblockCaptchaPost) | **POST** /session/unblock-captcha | Unblock captcha
+[**sessionKeepaliveGet**](AuthApi.md#sessionKeepaliveGet) | **GET** /session/keepalive | Refresh session expiration time
+[**sessionLoginGet**](AuthApi.md#sessionLoginGet) | **GET** /session/login | Log in and get session ID details
+[**sessionLoginPost**](AuthApi.md#sessionLoginPost) | **POST** /session/login | Log in to the account using MFA
+[**sessionLogoutGet**](AuthApi.md#sessionLogoutGet) | **GET** /session/logout | Close the user&#39;s session
+[**sessionUnblockCaptchaPost**](AuthApi.md#sessionUnblockCaptchaPost) | **POST** /session/unblock-captcha | Unblock the session using CAPTCHA
 
 
 <a name="sessionKeepaliveGet"></a>
 # **sessionKeepaliveGet**
 > sessionKeepaliveGet()
 
-Keepalive
+Refresh session expiration time
 
-Keep alive current session 
+Refresh the existing session using the ID for the session. The session will expire if there were no API actions for 15 minutes. 
 
 ### Example
 ```javascript
@@ -62,9 +62,9 @@ null (empty response body)
 # **sessionLoginGet**
 > SessionLoginResp sessionLoginGet()
 
-Login and get session ID
+Log in and get session ID details
 
-Basic Authentication with the Authorization header The Authorization header is constructed as follows   1. The user email and password are combined with a single colon. (:)   2. The resulting string is encoded using a variant of Base64.   3. The authorization method and a space is then prepended to the encoded string, separated with a space (e.g. \&quot;Basic \&quot;).   For example, &#39;test@example.com&#39; as the user email and &#39;qwerty&#39; as the password, then the field&#39;s value is the   base64-encoding of test@example.com:qwerty, or dGVzdEBleGFtcGxlLmNvbTpxd2VydHk&#x3D;.   Then the Authorization header will appear as   &#39;Authorization: Basic dGVzdEBleGFtcGxlLmNvbTpxd2VydHk&#x3D;&#39; 
+Get session information for the given session ID and log in to the account.  The easiest way to authenticate is using [Basic HTTP Authentication Scheme](https://en.wikipedia.org/wiki/Basic_access_authentication).  To proceed with the authorization, you need to have Quatrix account. If you don’t have the one, you can set up a free trial account [here](https://www.maytech.net/freetrial.html#trial&#x3D;qtrx).  As the basic authentication requires the authentication of the user with the user ID and password, the Authorization header should be constructed as follows:    1. The user email and password are combined with a single colon. (:)    2. The resulting string is encoded using a variant of Base64.    3. The authorization method and a space is then prepended to the encoded string, separated with a space (e.g. \&quot;Basic \&quot;).    For example, &#39;test@example.com&#39; as the user email and &#39;qwerty&#39; as the password, then the field&#39;s value is the following:    base64-encoding of test@example.com:qwerty, or dGVzdEBleGFtcGxlLmNvbTpxd2VydHk&#x3D;.    The authorization header will appear as    &#39;Authorization: Basic dGVzdEBleGFtcGxlLmNvbTpxd2VydHk&#x3D;&#39; 
 
 ### Example
 ```javascript
@@ -108,9 +108,9 @@ This endpoint does not need any parameter.
 # **sessionLoginPost**
 > SessionLoginResp sessionLoginPost(body)
 
-MFA
+Log in to the account using MFA
 
-Login with MFA 
+Use to generate a session login token in scenarios in which 2FA or PIN are required. 
 
 ### Example
 ```javascript
@@ -161,9 +161,9 @@ Name | Type | Description  | Notes
 # **sessionLogoutGet**
 > sessionLogoutGet()
 
-Logout
+Close the user&#39;s session
 
-Logout of current session 
+Close the session for the currently logged in user. 
 
 ### Example
 ```javascript
@@ -208,9 +208,9 @@ null (empty response body)
 # **sessionUnblockCaptchaPost**
 > SessionUnblockCaptchaResp sessionUnblockCaptchaPost(body)
 
-Unblock captcha
+Unblock the session using CAPTCHA
 
-Unblock captcha 
+Enter CAPTCHA to log in the user to the current session. 
 
 ### Example
 ```javascript

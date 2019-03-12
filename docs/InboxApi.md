@@ -4,16 +4,16 @@ All URIs are relative to *https://api.quatrix.it/api/1.0*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**inboxGet**](InboxApi.md#inboxGet) | **GET** /inbox | User&#x60;s inbox
+[**inboxGet**](InboxApi.md#inboxGet) | **GET** /inbox | Get contact&#39;s share tracking
 
 
 <a name="inboxGet"></a>
 # **inboxGet**
-> [InboxRespItems] inboxGet(opts)
+> [Object] inboxGet(opts)
 
-User&#x60;s inbox
+Get contact&#39;s share tracking
 
-User&#x60;s shares and file request list 
+Retrieve the tracking of actions where the contact was the recipient. 
 
 ### Example
 ```javascript
@@ -29,7 +29,7 @@ api_key.apiKey = 'YOUR API KEY';
 var apiInstance = new QuatrixApi.InboxApi();
 
 var opts = { 
-  'id': "id_example", // String | Inbox id
+  'id': "id_example", // String | Inbox ID
   'limit': 100, // Number | Rows per page
   'from': 0, // Number | UTC timestamp
   'to': 8.14 // Number | UTC timestamp
@@ -49,14 +49,14 @@ apiInstance.inboxGet(opts, callback);
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **id** | [**String**](.md)| Inbox id | [optional] 
+ **id** | [**String**](.md)| Inbox ID | [optional] 
  **limit** | **Number**| Rows per page | [optional] [default to 100]
  **from** | **Number**| UTC timestamp | [optional] [default to 0]
  **to** | **Number**| UTC timestamp | [optional] 
 
 ### Return type
 
-[**[InboxRespItems]**](InboxRespItems.md)
+**[Object]**
 
 ### Authorization
 

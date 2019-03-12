@@ -16,7 +16,7 @@ Name | Type | Description | Notes
 **userId** | **String** |  | [optional] 
 **pgpEncrypted** | **Boolean** | PGP protected share | [optional] 
 **privateKey** | **String** | for PGP | [optional] 
-**pgpEnabled** | **Boolean** | Shows that user from current session has PGP key. If True - user will get his private_key. | [optional] 
+**pgpEnabled** | **Boolean** | It shows that the user from the current session has PGP key. If True - the user will get his private_key. | [optional] 
 **status** | **String** |  | [optional] 
 **shareType** | **String** |  | [optional] 
 **title** | **String** |  | [optional] 

@@ -4,71 +4,17 @@ All URIs are relative to *https://api.quatrix.it/api/1.0*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**previewDocumentPdfIdGet**](PreviewApi.md#previewDocumentPdfIdGet) | **GET** /preview/document_pdf/{id} | File document page preview
-[**previewImageIdGet**](PreviewApi.md#previewImageIdGet) | **GET** /preview/image/{id} | File image preview
-[**previewVideoIdGet**](PreviewApi.md#previewVideoIdGet) | **GET** /preview/video/{id} | File video preview
+[**filePreviewIdGet**](PreviewApi.md#filePreviewIdGet) | **GET** /file/preview/{id} | Get a file preview
+[**previewIdGet**](PreviewApi.md#previewIdGet) | **GET** /preview/{id} | Get binary preview data
 
 
-<a name="previewDocumentPdfIdGet"></a>
-# **previewDocumentPdfIdGet**
-> previewDocumentPdfIdGet(id)
+<a name="filePreviewIdGet"></a>
+# **filePreviewIdGet**
+> FilePreviewResp filePreviewIdGet(id, )
 
-File document page preview
+Get a file preview
 
-Get file document page preview 
-
-### Example
-```javascript
-var QuatrixApi = require('quatrix_api');
-var defaultClient = QuatrixApi.ApiClient.instance;
-
-// Configure API key authorization: api_key
-var api_key = defaultClient.authentications['api_key'];
-api_key.apiKey = 'YOUR API KEY';
-// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-//api_key.apiKeyPrefix = 'Token';
-
-var apiInstance = new QuatrixApi.PreviewApi();
-
-var id = "id_example"; // String | File document preview page ID
-
-
-var callback = function(error, data, response) {
-  if (error) {
-    console.error(error);
-  } else {
-    console.log('API called successfully.');
-  }
-};
-apiInstance.previewDocumentPdfIdGet(id, callback);
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **id** | [**String**](.md)| File document preview page ID | 
-
-### Return type
-
-null (empty response body)
-
-### Authorization
-
-[api_key](../README.md#api_key)
-
-### HTTP request headers
-
- - **Content-Type**: application/json
- - **Accept**: image/png
-
-<a name="previewImageIdGet"></a>
-# **previewImageIdGet**
-> previewImageIdGet(id, opts)
-
-File image preview
-
-Get file image preview 
+Retrieve a file preview by the given ID of the file. 
 
 ### Example
 ```javascript
@@ -83,32 +29,28 @@ api_key.apiKey = 'YOUR API KEY';
 
 var apiInstance = new QuatrixApi.PreviewApi();
 
-var id = "id_example"; // String | File ID
+var id = "id_example"; // String | ID of a file
 
-var opts = { 
-  'size': "size_example" // String | 
-};
 
 var callback = function(error, data, response) {
   if (error) {
     console.error(error);
   } else {
-    console.log('API called successfully.');
+    console.log('API called successfully. Returned data: ' + data);
   }
 };
-apiInstance.previewImageIdGet(id, opts, callback);
+apiInstance.filePreviewIdGet(id, , callback);
 ```
 
 ### Parameters
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **id** | [**String**](.md)| File ID | 
- **size** | **String**|  | [optional] 
+ **id** | [**String**](.md)| ID of a file | 
 
 ### Return type
 
-null (empty response body)
+[**FilePreviewResp**](FilePreviewResp.md)
 
 ### Authorization
 
@@ -117,15 +59,15 @@ null (empty response body)
 ### HTTP request headers
 
  - **Content-Type**: application/json
- - **Accept**: image/png
+ - **Accept**: application/json
 
-<a name="previewVideoIdGet"></a>
-# **previewVideoIdGet**
-> previewVideoIdGet(id)
+<a name="previewIdGet"></a>
+# **previewIdGet**
+> previewIdGet(id)
 
-File video preview
+Get binary preview data
 
-Get file video preview 
+Get a preview with the response content type based on the file type e.g. image/jpeg for images. 
 
 ### Example
 ```javascript
@@ -150,7 +92,7 @@ var callback = function(error, data, response) {
     console.log('API called successfully.');
   }
 };
-apiInstance.previewVideoIdGet(id, callback);
+apiInstance.previewIdGet(id, callback);
 ```
 
 ### Parameters
@@ -170,5 +112,5 @@ null (empty response body)
 ### HTTP request headers
 
  - **Content-Type**: application/json
- - **Accept**: image/mp4
+ - **Accept**: image/jpeg, video/mp4, application/pdf
 

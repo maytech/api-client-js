@@ -4,8 +4,7 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **type** | **String** |  | [optional] 
-**source** | **String** |  | [optional] 
-**sourcePdf** | **String** |  | [optional] 
+**uri** | **String** | URI to get file preview by a preview type. | [optional] 
 
 
 <a name="TypeEnum"></a>

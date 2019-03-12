@@ -4,36 +4,36 @@ All URIs are relative to *https://api.quatrix.it/api/1.0*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**filesReturnMakedirIdPost**](ShareApi.md#filesReturnMakedirIdPost) | **POST** /files-return/makedir/{id} | Return files makedir
+[**filesReturnMakedirIdPost**](ShareApi.md#filesReturnMakedirIdPost) | **POST** /files-return/makedir/{id} | Create a directory for returned files
 [**filesReturnMetadataIdGet**](ShareApi.md#filesReturnMetadataIdGet) | **GET** /files-return/metadata/{id} | Get return files metadata
-[**filesReturnSendPost**](ShareApi.md#filesReturnSendPost) | **POST** /files-return/send | Send return files share
+[**filesReturnSendPost**](ShareApi.md#filesReturnSendPost) | **POST** /files-return/send | Return files in the created share
 [**filesReturnUploadLinkIdPost**](ShareApi.md#filesReturnUploadLinkIdPost) | **POST** /files-return/upload-link/{id} | Get return files upload link
-[**quicklinkCreatePost**](ShareApi.md#quicklinkCreatePost) | **POST** /quicklink/create | Create quicklink
-[**quicklinkLoginPinPost**](ShareApi.md#quicklinkLoginPinPost) | **POST** /quicklink/login-pin | Login with PIN on quicklink
-[**quicklinkRevokeIdGet**](ShareApi.md#quicklinkRevokeIdGet) | **GET** /quicklink/revoke/{id} | Revoke quicklink
-[**shareCreatePost**](ShareApi.md#shareCreatePost) | **POST** /share/create | Create share
+[**quicklinkCreatePost**](ShareApi.md#quicklinkCreatePost) | **POST** /quicklink/create | Create a quicklink
+[**quicklinkLoginPinPost**](ShareApi.md#quicklinkLoginPinPost) | **POST** /quicklink/login-pin | Log in with PIN to access a quicklink
+[**quicklinkRevokeIdGet**](ShareApi.md#quicklinkRevokeIdGet) | **GET** /quicklink/revoke/{id} | Revoke a quicklink
+[**shareCreatePost**](ShareApi.md#shareCreatePost) | **POST** /share/create | Create a file share
 [**shareDownloadIdGet**](ShareApi.md#shareDownloadIdGet) | **GET** /share/download/{id} | Download share files
-[**shareDownloadInfoIdGet**](ShareApi.md#shareDownloadInfoIdGet) | **GET** /share/download-info/{id} | Share download info
-[**shareDownloadLinkIdGet**](ShareApi.md#shareDownloadLinkIdGet) | **GET** /share/download-link/{id} | Download link
-[**shareDownloadLinkIdPost**](ShareApi.md#shareDownloadLinkIdPost) | **POST** /share/download-link/{id} | Download link
-[**shareFilesIdGet**](ShareApi.md#shareFilesIdGet) | **GET** /share/files/{id} | Share files
-[**shareLoginPinPost**](ShareApi.md#shareLoginPinPost) | **POST** /share/login-pin | Login with pin on share
-[**sharePreviewIdGet**](ShareApi.md#sharePreviewIdGet) | **GET** /share/preview/{id} | Preview share file
-[**shareRecipientsGet**](ShareApi.md#shareRecipientsGet) | **GET** /share/recipients | Share recipinets
-[**shareRequestPost**](ShareApi.md#shareRequestPost) | **POST** /share/request | Request share
-[**shareRevokeIdGet**](ShareApi.md#shareRevokeIdGet) | **GET** /share/revoke/{id} | Revoke share
-[**shareSendRequestIdPost**](ShareApi.md#shareSendRequestIdPost) | **POST** /share/send-request/{id} | DEPRECATED! Use /share/request instead.
-[**trackingGet**](ShareApi.md#trackingGet) | **GET** /tracking/ | List share actions
-[**trackingIdGet**](ShareApi.md#trackingIdGet) | **GET** /tracking/{id} | List share actions
+[**shareDownloadInfoIdGet**](ShareApi.md#shareDownloadInfoIdGet) | **GET** /share/download-info/{id} | Get share download info
+[**shareDownloadLinkIdGet**](ShareApi.md#shareDownloadLinkIdGet) | **GET** /share/download-link/{id} | Get download link for all files
+[**shareDownloadLinkIdPost**](ShareApi.md#shareDownloadLinkIdPost) | **POST** /share/download-link/{id} | Get download link for specified files
+[**shareFilesIdGet**](ShareApi.md#shareFilesIdGet) | **GET** /share/files/{id} | List shared files
+[**shareLoginPinPost**](ShareApi.md#shareLoginPinPost) | **POST** /share/login-pin | Log in with PIN to access a share
+[**sharePreviewIdGet**](ShareApi.md#sharePreviewIdGet) | **GET** /share/preview/{id} | Preview a shared file
+[**shareRecipientsGet**](ShareApi.md#shareRecipientsGet) | **GET** /share/recipients | List all contacts for the share
+[**shareRequestPost**](ShareApi.md#shareRequestPost) | **POST** /share/request | Send a request to share files
+[**shareRevokeIdGet**](ShareApi.md#shareRevokeIdGet) | **GET** /share/revoke/{id} | Revoke a share
+[**shareSendRequestIdPost**](ShareApi.md#shareSendRequestIdPost) | **POST** /share/send-request/{id} | Request files. Use /share/request API call instead.
+[**trackingGet**](ShareApi.md#trackingGet) | **GET** /tracking/ | List share actions metadata for all users
+[**trackingIdGet**](ShareApi.md#trackingIdGet) | **GET** /tracking/{id} | List share actions metadata for a user
 
 
 <a name="filesReturnMakedirIdPost"></a>
 # **filesReturnMakedirIdPost**
 > FilesReturnMakedirResps filesReturnMakedirIdPost(id, body)
 
-Return files makedir
+Create a directory for returned files
 
-Create folder via return files 
+Add a directory for retuned files in the sender’s file tree. In order to return a file tree structure, you should duplicate it on the server side, that is send this API call to create each folder separately. This call returns the ID response that can be used as the parent ID for creating a new folder in the already created folder. 
 
 ### Example
 ```javascript
@@ -89,7 +89,7 @@ Name | Type | Description  | Notes
 
 Get return files metadata
 
-Get return files metadata 
+Get the metadata of returning files. 
 
 ### Example
 ```javascript
@@ -140,9 +140,9 @@ Name | Type | Description  | Notes
 # **filesReturnSendPost**
 > FilesReturnSendResp filesReturnSendPost(body)
 
-Send return files share
+Return files in the created share
 
-Create and send return files share 
+Return files to the share sender. 
 
 ### Example
 ```javascript
@@ -195,7 +195,7 @@ Name | Type | Description  | Notes
 
 Get return files upload link
 
-Get return files upload link 
+Get the upload link to return files to the share sender. 
 
 ### Example
 ```javascript
@@ -249,9 +249,9 @@ Name | Type | Description  | Notes
 # **quicklinkCreatePost**
 > QuicklinkCreateResp quicklinkCreatePost(body)
 
-Create quicklink
+Create a quicklink
 
-Creating public share with no recipients 
+Create a quicklink with the usage behaviour the same as a public share. 
 
 ### Example
 ```javascript
@@ -302,9 +302,9 @@ Name | Type | Description  | Notes
 # **quicklinkLoginPinPost**
 > quicklinkLoginPinPost(body)
 
-Login with PIN on quicklink
+Log in with PIN to access a quicklink
 
-Login on quicklink protected with PIN 
+Log in using a previously generated PIN that was sent while creating the quicklink to have access to it. 
 
 ### Example
 ```javascript
@@ -355,9 +355,9 @@ null (empty response body)
 # **quicklinkRevokeIdGet**
 > IdResp quicklinkRevokeIdGet(id)
 
-Revoke quicklink
+Revoke a quicklink
 
-Revoke quicklink 
+Disable access to a quicklink. 
 
 ### Example
 ```javascript
@@ -408,9 +408,9 @@ Name | Type | Description  | Notes
 # **shareCreatePost**
 > ShareCreateResp shareCreatePost(body)
 
-Create share
+Create a file share
 
-Create share 
+Create a share with files. File share types:           - P (public) - Anyone can download. Limited tracking - IP address only.           - T (tracked) - Any registered user/recipient can download. Full tracking.           - C (restricted) - Only the registered email recipient(s) can download. Full tracking. 
 
 ### Example
 ```javascript
@@ -459,11 +459,11 @@ Name | Type | Description  | Notes
 
 <a name="shareDownloadIdGet"></a>
 # **shareDownloadIdGet**
-> shareDownloadIdGet(id, opts)
+> shareDownloadIdGet(id)
 
 Download share files
 
-Download share files content 
+Download files requested in the share/download-link call. 
 
 ### Example
 ```javascript
@@ -473,9 +473,6 @@ var apiInstance = new QuatrixApi.ShareApi();
 
 var id = "id_example"; // String | Download link ID
 
-var opts = { 
-  'files': ["files_example"] // [String] | File ids
-};
 
 var callback = function(error, data, response) {
   if (error) {
@@ -484,7 +481,7 @@ var callback = function(error, data, response) {
     console.log('API called successfully.');
   }
 };
-apiInstance.shareDownloadIdGet(id, opts, callback);
+apiInstance.shareDownloadIdGet(id, callback);
 ```
 
 ### Parameters
@@ -492,7 +489,6 @@ apiInstance.shareDownloadIdGet(id, opts, callback);
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id** | [**String**](.md)| Download link ID | 
- **files** | [**[String]**](String.md)| File ids | [optional] 
 
 ### Return type
 
@@ -511,9 +507,9 @@ No authorization required
 # **shareDownloadInfoIdGet**
 > ShareDownloadInfoResp shareDownloadInfoIdGet(id)
 
-Share download info
+Get share download info
 
-Get share download info 
+Get the share metadata by the given share action iD. File share types:           - P (public) - Anyone can download. Limited tracking - IP address only.           - T (tracked) - Any registered user/recipient can download. Full tracking.           - C (restricted) - Only the registered email recipient(s) can download. Full tracking. 
 
 ### Example
 ```javascript
@@ -564,9 +560,9 @@ Name | Type | Description  | Notes
 # **shareDownloadLinkIdGet**
 > IdResp shareDownloadLinkIdGet(id)
 
-Download link
+Get download link for all files
 
-Download link for all files 
+Retrieve a link for downloading all files. 
 
 ### Example
 ```javascript
@@ -617,9 +613,9 @@ Name | Type | Description  | Notes
 # **shareDownloadLinkIdPost**
 > IdResp shareDownloadLinkIdPost(id, opts)
 
-Download link
+Get download link for specified files
 
-Download link for selected files 
+Retrieve a link for downloading specified files. 
 
 ### Example
 ```javascript
@@ -672,11 +668,11 @@ Name | Type | Description  | Notes
 
 <a name="shareFilesIdGet"></a>
 # **shareFilesIdGet**
-> [ShareFilesRespItems] shareFilesIdGet(id)
+> [Object] shareFilesIdGet(id)
 
-Share files
+List shared files
 
-List share files 
+Retrieve a list of shared files. 
 
 ### Example
 ```javascript
@@ -712,7 +708,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**[ShareFilesRespItems]**](ShareFilesRespItems.md)
+**[Object]**
 
 ### Authorization
 
@@ -727,9 +723,9 @@ Name | Type | Description  | Notes
 # **shareLoginPinPost**
 > shareLoginPinPost(body)
 
-Login with pin on share
+Log in with PIN to access a share
 
-Login with pin on share protected with pin 
+Log in using a previously generated PIN that was sent while creating the share to have access to it. 
 
 ### Example
 ```javascript
@@ -780,9 +776,9 @@ null (empty response body)
 # **sharePreviewIdGet**
 > sharePreviewIdGet(id, opts)
 
-Preview share file
+Preview a shared file
 
-Preview share file 
+Preview a shared file by given share file ID. 
 
 ### Example
 ```javascript
@@ -837,9 +833,9 @@ null (empty response body)
 # **shareRecipientsGet**
 > ShareRecipientsResp shareRecipientsGet(opts)
 
-Share recipinets
+List all contacts for the share
 
-List share available recipients 
+Retrieve a list of all recipients that can receive the share. 
 
 ### Example
 ```javascript
@@ -855,7 +851,7 @@ api_key.apiKey = 'YOUR API KEY';
 var apiInstance = new QuatrixApi.ShareApi();
 
 var opts = { 
-  'email': "email_example" // String | Start of recipient email
+  'email': "email_example" // String | Search emails by the specified beginning.
 };
 
 var callback = function(error, data, response) {
@@ -872,7 +868,7 @@ apiInstance.shareRecipientsGet(opts, callback);
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **email** | **String**| Start of recipient email | [optional] 
+ **email** | **String**| Search emails by the specified beginning. | [optional] 
 
 ### Return type
 
@@ -891,9 +887,9 @@ Name | Type | Description  | Notes
 # **shareRequestPost**
 > ShareRequestResp shareRequestPost(body)
 
-Request share
+Send a request to share files
 
-Request share 
+Send a file sharing request. 
 
 ### Example
 ```javascript
@@ -944,9 +940,9 @@ Name | Type | Description  | Notes
 # **shareRevokeIdGet**
 > IdResp shareRevokeIdGet(id)
 
-Revoke share
+Revoke a share
 
-Revoke share 
+Revoke access to a share 
 
 ### Example
 ```javascript
@@ -997,9 +993,9 @@ Name | Type | Description  | Notes
 # **shareSendRequestIdPost**
 > JobResp shareSendRequestIdPost(id, opts)
 
-DEPRECATED! Use /share/request instead.
+Request files. Use /share/request API call instead.
 
-Send share request email 
+Send a file sharing request. 
 
 ### Example
 ```javascript
@@ -1052,11 +1048,11 @@ Name | Type | Description  | Notes
 
 <a name="trackingGet"></a>
 # **trackingGet**
-> [TrackingRespItems] trackingGet(opts)
+> [Object] trackingGet(opts)
 
-List share actions
+List share actions metadata for all users
 
-List share actions 
+Retrieve the metadata of created shares and quicklinks of all users that can be managed by a logged-in user. 
 
 ### Example
 ```javascript
@@ -1093,7 +1089,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**[TrackingRespItems]**](TrackingRespItems.md)
+**[Object]**
 
 ### Authorization
 
@@ -1106,11 +1102,11 @@ Name | Type | Description  | Notes
 
 <a name="trackingIdGet"></a>
 # **trackingIdGet**
-> [TrackingIdRespItems] trackingIdGet(id, opts)
+> [Object] trackingIdGet(id, opts)
 
-List share actions
+List share actions metadata for a user
 
-List share actions 
+Retrieve the metadata of created shares and quicklinks of a user by given user ID. 
 
 ### Example
 ```javascript
@@ -1125,7 +1121,7 @@ api_key.apiKey = 'YOUR API KEY';
 
 var apiInstance = new QuatrixApi.ShareApi();
 
-var id = "id_example"; // String | User id
+var id = "id_example"; // String | User ID
 
 var opts = { 
   '_date': 8.14 // Number | Share date timestamp
@@ -1145,12 +1141,12 @@ apiInstance.trackingIdGet(id, opts, callback);
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **id** | **String**| User id | 
+ **id** | **String**| User ID | 
  **_date** | **Number**| Share date timestamp | [optional] 
 
 ### Return type
 
-[**[TrackingIdRespItems]**](TrackingIdRespItems.md)
+**[Object]**
 
 ### Authorization
 

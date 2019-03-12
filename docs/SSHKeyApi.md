@@ -4,21 +4,20 @@ All URIs are relative to *https://api.quatrix.it/api/1.0*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**sshKeyCreatePost**](SSHKeyApi.md#sshKeyCreatePost) | **POST** /ssh-key/create | Create SSH key
-[**sshKeyDeleteIdGet**](SSHKeyApi.md#sshKeyDeleteIdGet) | **GET** /ssh-key/delete/{id} | Delete SSH key
+[**sshKeyCreatePost**](SSHKeyApi.md#sshKeyCreatePost) | **POST** /ssh-key/create | Create a new SSH key
 [**sshKeyDeletePost**](SSHKeyApi.md#sshKeyDeletePost) | **POST** /ssh-key/delete | Delete SSH key
-[**sshKeyEditPost**](SSHKeyApi.md#sshKeyEditPost) | **POST** /ssh-key/edit | Edit SSH key
-[**sshKeyGet**](SSHKeyApi.md#sshKeyGet) | **GET** /ssh-key | List ssh keys
-[**sshKeyMetadataIdGet**](SSHKeyApi.md#sshKeyMetadataIdGet) | **GET** /ssh-key/metadata/{id} | SSH key metadata
+[**sshKeyEditPost**](SSHKeyApi.md#sshKeyEditPost) | **POST** /ssh-key/edit | Edit SSH key metadata
+[**sshKeyGet**](SSHKeyApi.md#sshKeyGet) | **GET** /ssh-key | List available SSH keys
+[**sshKeyMetadataIdGet**](SSHKeyApi.md#sshKeyMetadataIdGet) | **GET** /ssh-key/metadata/{id} | Get SSH key metadata
 
 
 <a name="sshKeyCreatePost"></a>
 # **sshKeyCreatePost**
 > SshKeyResp sshKeyCreatePost(body)
 
-Create SSH key
+Create a new SSH key
 
-Create new SSH key 
+Generate a new SSH key. 
 
 ### Example
 ```javascript
@@ -65,66 +64,13 @@ Name | Type | Description  | Notes
  - **Content-Type**: application/json
  - **Accept**: application/json
 
-<a name="sshKeyDeleteIdGet"></a>
-# **sshKeyDeleteIdGet**
-> IdResp sshKeyDeleteIdGet(id)
-
-Delete SSH key
-
-Delete SSH key 
-
-### Example
-```javascript
-var QuatrixApi = require('quatrix_api');
-var defaultClient = QuatrixApi.ApiClient.instance;
-
-// Configure API key authorization: api_key
-var api_key = defaultClient.authentications['api_key'];
-api_key.apiKey = 'YOUR API KEY';
-// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-//api_key.apiKeyPrefix = 'Token';
-
-var apiInstance = new QuatrixApi.SSHKeyApi();
-
-var id = "id_example"; // String | ID of a SSH key
-
-
-var callback = function(error, data, response) {
-  if (error) {
-    console.error(error);
-  } else {
-    console.log('API called successfully. Returned data: ' + data);
-  }
-};
-apiInstance.sshKeyDeleteIdGet(id, callback);
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **id** | [**String**](.md)| ID of a SSH key | 
-
-### Return type
-
-[**IdResp**](IdResp.md)
-
-### Authorization
-
-[api_key](../README.md#api_key)
-
-### HTTP request headers
-
- - **Content-Type**: application/json
- - **Accept**: application/json
-
 <a name="sshKeyDeletePost"></a>
 # **sshKeyDeletePost**
 > IdResp sshKeyDeletePost(body)
 
 Delete SSH key
 
-Delete SSH key 
+Remove the key specified by SSH key ID. 
 
 ### Example
 ```javascript
@@ -175,9 +121,9 @@ Name | Type | Description  | Notes
 # **sshKeyEditPost**
 > SshKeyResp sshKeyEditPost(body)
 
-Edit SSH key
+Edit SSH key metadata
 
-Edit SSH key 
+Update the metadata of SSH key. 
 
 ### Example
 ```javascript
@@ -228,9 +174,9 @@ Name | Type | Description  | Notes
 # **sshKeyGet**
 > [SshKeyResp] sshKeyGet()
 
-List ssh keys
+List available SSH keys
 
-List ssh keys 
+Get a list of all SSH keys of the logged-in user. 
 
 ### Example
 ```javascript
@@ -275,9 +221,9 @@ This endpoint does not need any parameter.
 # **sshKeyMetadataIdGet**
 > SshKeyResp sshKeyMetadataIdGet(id)
 
-SSH key metadata
+Get SSH key metadata
 
-Get SSH key metadata 
+Retrieve the metadata of SSH key by the given ID. 
 
 ### Example
 ```javascript
@@ -292,7 +238,7 @@ api_key.apiKey = 'YOUR API KEY';
 
 var apiInstance = new QuatrixApi.SSHKeyApi();
 
-var id = "id_example"; // String | ID of a SSH key
+var id = "id_example"; // String | SSH key ID
 
 
 var callback = function(error, data, response) {
@@ -309,7 +255,7 @@ apiInstance.sshKeyMetadataIdGet(id, callback);
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **id** | [**String**](.md)| ID of a SSH key | 
+ **id** | [**String**](.md)| SSH key ID | 
 
 ### Return type
 

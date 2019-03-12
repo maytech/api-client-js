@@ -4,19 +4,19 @@ All URIs are relative to *https://api.quatrix.it/api/1.0*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**settingsAuthMethodsGet**](SiteSettingsApi.md#settingsAuthMethodsGet) | **GET** /settings/auth-methods | Get account auth-methods settings
+[**settingsAuthMethodsGet**](SiteSettingsApi.md#settingsAuthMethodsGet) | **GET** /settings/auth-methods | Get available authentication methods
 [**settingsGet**](SiteSettingsApi.md#settingsGet) | **GET** /settings | Get site settings
 [**settingsSetPost**](SiteSettingsApi.md#settingsSetPost) | **POST** /settings/set | Set site settings
-[**settingsUploadLogoLinkGet**](SiteSettingsApi.md#settingsUploadLogoLinkGet) | **GET** /settings/upload-logo-link | Get logo upload link
+[**settingsUploadLogoLinkGet**](SiteSettingsApi.md#settingsUploadLogoLinkGet) | **GET** /settings/upload-logo-link | Get a new logo upload link
 
 
 <a name="settingsAuthMethodsGet"></a>
 # **settingsAuthMethodsGet**
-> [SettingsAuthMethodsRespItems] settingsAuthMethodsGet()
+> [Object] settingsAuthMethodsGet()
 
-Get account auth-methods settings
+Get available authentication methods
 
-Get account auth-methods settings 
+Get available authentication methods that can be set for the account. 
 
 ### Example
 ```javascript
@@ -46,7 +46,7 @@ This endpoint does not need any parameter.
 
 ### Return type
 
-[**[SettingsAuthMethodsRespItems]**](SettingsAuthMethodsRespItems.md)
+**[Object]**
 
 ### Authorization
 
@@ -63,7 +63,7 @@ This endpoint does not need any parameter.
 
 Get site settings
 
-Get site settings 
+Retrieve information about the service settings adjusted for the account e.g. language, banner text, email footer, billing emails, PGP, permitted share types. 
 
 ### Example
 ```javascript
@@ -110,7 +110,7 @@ This endpoint does not need any parameter.
 
 Set site settings
 
-Set site settings 
+Update service settings for the account e.g. enable or disable PGP, force 2FA for all users of the account. 
 
 ### Example
 ```javascript
@@ -161,9 +161,9 @@ Name | Type | Description  | Notes
 # **settingsUploadLogoLinkGet**
 > SettingsUploadLogoLinkResp settingsUploadLogoLinkGet()
 
-Get logo upload link
+Get a new logo upload link
 
-Get account logo upload link 
+Get a unique key for uploading a new logo 
 
 ### Example
 ```javascript

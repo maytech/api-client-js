@@ -4,8 +4,8 @@ All URIs are relative to *https://api.quatrix.it/api/1.0*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**fileModifyPost**](UploadApi.md#fileModifyPost) | **POST** /file/modify | Get file modify link
-[**settingsUploadLogoLinkGet**](UploadApi.md#settingsUploadLogoLinkGet) | **GET** /settings/upload-logo-link | Get logo upload link
+[**fileModifyPost**](UploadApi.md#fileModifyPost) | **POST** /file/modify | Get file modification link
+[**settingsUploadLogoLinkGet**](UploadApi.md#settingsUploadLogoLinkGet) | **GET** /settings/upload-logo-link | Get a new logo upload link
 [**uploadFinalizeIdGet**](UploadApi.md#uploadFinalizeIdGet) | **GET** /upload/finalize/{id} | Finalize chunked file upload
 [**uploadLinkPost**](UploadApi.md#uploadLinkPost) | **POST** /upload/link | Get file upload link
 
@@ -14,9 +14,9 @@ Method | HTTP request | Description
 # **fileModifyPost**
 > FileModifyResp fileModifyPost(body)
 
-Get file modify link
+Get file modification link
 
-Get file modify link 
+Get file modification link 
 
 ### Example
 ```javascript
@@ -67,9 +67,9 @@ Name | Type | Description  | Notes
 # **settingsUploadLogoLinkGet**
 > SettingsUploadLogoLinkResp settingsUploadLogoLinkGet()
 
-Get logo upload link
+Get a new logo upload link
 
-Get account logo upload link 
+Get a unique key for uploading a new logo 
 
 ### Example
 ```javascript
@@ -116,7 +116,7 @@ This endpoint does not need any parameter.
 
 Finalize chunked file upload
 
-Finalize chunked file upload 
+Complete the chunked upload of a file. 
 
 ### Example
 ```javascript
@@ -173,7 +173,7 @@ Name | Type | Description  | Notes
 
 Get file upload link
 
-Get file upload link 
+Retrieve a link for uploading a file. 
 
 ### Example
 ```javascript

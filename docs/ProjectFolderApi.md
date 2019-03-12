@@ -4,25 +4,25 @@ All URIs are relative to *https://api.quatrix.it/api/1.0*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**projectFolderAddUsersIdPost**](ProjectFolderApi.md#projectFolderAddUsersIdPost) | **POST** /project-folder/add-users/{id} | Add project folder users
-[**projectFolderCreatePost**](ProjectFolderApi.md#projectFolderCreatePost) | **POST** /project-folder/create | Create project folder
-[**projectFolderDeleteIdGet**](ProjectFolderApi.md#projectFolderDeleteIdGet) | **GET** /project-folder/delete/{id} | Remove project folder
+[**projectFolderAddUsersIdPost**](ProjectFolderApi.md#projectFolderAddUsersIdPost) | **POST** /project-folder/add-users/{id} | Add users to the project folder
+[**projectFolderCreatePost**](ProjectFolderApi.md#projectFolderCreatePost) | **POST** /project-folder/create | Create a project folder
+[**projectFolderDeleteIdGet**](ProjectFolderApi.md#projectFolderDeleteIdGet) | **GET** /project-folder/delete/{id} | Convert a project folder to a folder
 [**projectFolderDeleteUsersPost**](ProjectFolderApi.md#projectFolderDeleteUsersPost) | **POST** /project-folder/delete-users/ | Remove project folder users
-[**projectFolderEditUsersIdPost**](ProjectFolderApi.md#projectFolderEditUsersIdPost) | **POST** /project-folder/edit-users/{id} | Update project folder users
-[**projectFolderGet**](ProjectFolderApi.md#projectFolderGet) | **GET** /project-folder | List of valid project folder for current user
-[**projectFolderMetadataIdGet**](ProjectFolderApi.md#projectFolderMetadataIdGet) | **GET** /project-folder/metadata/{id} | Project folder metadata
-[**projectFolderProjectUsersPost**](ProjectFolderApi.md#projectFolderProjectUsersPost) | **POST** /project-folder/project-users | List of project folders for users
-[**projectFolderSetUsersPost**](ProjectFolderApi.md#projectFolderSetUsersPost) | **POST** /project-folder/set-users | Add users to project folders. Replace exists permissions if users exists
-[**projectFolderUsersIdGet**](ProjectFolderApi.md#projectFolderUsersIdGet) | **GET** /project-folder/users/{id} | List project folder users
+[**projectFolderEditUsersIdPost**](ProjectFolderApi.md#projectFolderEditUsersIdPost) | **POST** /project-folder/edit-users/{id} | Update users’ permissions of the project folder
+[**projectFolderGet**](ProjectFolderApi.md#projectFolderGet) | **GET** /project-folder | List available project folders for a logged-in user
+[**projectFolderMetadataIdGet**](ProjectFolderApi.md#projectFolderMetadataIdGet) | **GET** /project-folder/metadata/{id} | Get project folder metadata
+[**projectFolderProjectUsersPost**](ProjectFolderApi.md#projectFolderProjectUsersPost) | **POST** /project-folder/project-users | List all project folders for given users
+[**projectFolderSetUsersPost**](ProjectFolderApi.md#projectFolderSetUsersPost) | **POST** /project-folder/set-users | Add users to project folders.
+[**projectFolderUsersIdGet**](ProjectFolderApi.md#projectFolderUsersIdGet) | **GET** /project-folder/users/{id} | List users of the project folder
 
 
 <a name="projectFolderAddUsersIdPost"></a>
 # **projectFolderAddUsersIdPost**
 > [UserPermissionResp] projectFolderAddUsersIdPost(id, body)
 
-Add project folder users
+Add users to the project folder
 
-Add project folder users 
+Add users to the specified project folder. 
 
 ### Example
 ```javascript
@@ -76,9 +76,9 @@ Name | Type | Description  | Notes
 # **projectFolderCreatePost**
 > PfCreateResp projectFolderCreatePost(body)
 
-Create project folder
+Create a project folder
 
-Create new project folder 
+Create a new project folder for a user. 
 
 ### Example
 ```javascript
@@ -129,9 +129,9 @@ Name | Type | Description  | Notes
 # **projectFolderDeleteIdGet**
 > IdResp projectFolderDeleteIdGet(id)
 
-Remove project folder
+Convert a project folder to a folder
 
-Remove project folder 
+Convert the project folder to regular folder keeping the same name and location. 
 
 ### Example
 ```javascript
@@ -180,11 +180,11 @@ Name | Type | Description  | Notes
 
 <a name="projectFolderDeleteUsersPost"></a>
 # **projectFolderDeleteUsersPost**
-> [PfDeleteUsersRespItems] projectFolderDeleteUsersPost(body)
+> [Object] projectFolderDeleteUsersPost(body)
 
 Remove project folder users
 
-Remove project folder users 
+Delete users of the given project folder. 
 
 ### Example
 ```javascript
@@ -220,7 +220,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**[PfDeleteUsersRespItems]**](PfDeleteUsersRespItems.md)
+**[Object]**
 
 ### Authorization
 
@@ -235,9 +235,9 @@ Name | Type | Description  | Notes
 # **projectFolderEditUsersIdPost**
 > [UserPermissionResp] projectFolderEditUsersIdPost(id, body)
 
-Update project folder users
+Update users’ permissions of the project folder
 
-Update project folder users 
+Edit users’ permissions of the given project folder. 
 
 ### Example
 ```javascript
@@ -289,11 +289,11 @@ Name | Type | Description  | Notes
 
 <a name="projectFolderGet"></a>
 # **projectFolderGet**
-> [ProjectFoldersListRespItem] projectFolderGet()
+> [Object] projectFolderGet()
 
-List of valid project folder for current user
+List available project folders for a logged-in user
 
-Get list of project folders 
+Retrieve a list of all project folders of a current logged-in user. 
 
 ### Example
 ```javascript
@@ -323,7 +323,7 @@ This endpoint does not need any parameter.
 
 ### Return type
 
-[**[ProjectFoldersListRespItem]**](ProjectFoldersListRespItem.md)
+**[Object]**
 
 ### Authorization
 
@@ -338,9 +338,9 @@ This endpoint does not need any parameter.
 # **projectFolderMetadataIdGet**
 > PfMetadataResp projectFolderMetadataIdGet(id)
 
-Project folder metadata
+Get project folder metadata
 
-Project folder metadata 
+Retrieve the metadata of the project folder. 
 
 ### Example
 ```javascript
@@ -389,11 +389,11 @@ Name | Type | Description  | Notes
 
 <a name="projectFolderProjectUsersPost"></a>
 # **projectFolderProjectUsersPost**
-> [PfUsersListRespItems] projectFolderProjectUsersPost(body)
+> [Object] projectFolderProjectUsersPost(body)
 
-List of project folders for users
+List all project folders for given users
 
-List of project folders for users 
+Get a list of all project folders for given users. 
 
 ### Example
 ```javascript
@@ -429,7 +429,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**[PfUsersListRespItems]**](PfUsersListRespItems.md)
+**[Object]**
 
 ### Authorization
 
@@ -442,11 +442,11 @@ Name | Type | Description  | Notes
 
 <a name="projectFolderSetUsersPost"></a>
 # **projectFolderSetUsersPost**
-> [PfSetUsersRespItems] projectFolderSetUsersPost(body)
+> [Object] projectFolderSetUsersPost(body)
 
-Add users to project folders. Replace exists permissions if users exists
+Add users to project folders.
 
-Set users to project folders 
+Add users to specified project folders. If the users exist in the given project folder, their permissions will be updated based on given parameters. 
 
 ### Example
 ```javascript
@@ -482,7 +482,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**[PfSetUsersRespItems]**](PfSetUsersRespItems.md)
+**[Object]**
 
 ### Authorization
 
@@ -497,9 +497,9 @@ Name | Type | Description  | Notes
 # **projectFolderUsersIdGet**
 > [UserPermissionResp] projectFolderUsersIdGet(id)
 
-List project folder users
+List users of the project folder
 
-List project folder users 
+Retrieve a list of users by given project folder ID. 
 
 ### Example
 ```javascript

@@ -4,20 +4,20 @@ All URIs are relative to *https://api.quatrix.it/api/1.0*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**automationCreatePost**](AutomationApi.md#automationCreatePost) | **POST** /automation/create | Create automation
+[**automationCreatePost**](AutomationApi.md#automationCreatePost) | **POST** /automation/create | Create a new automation
 [**automationDeletePost**](AutomationApi.md#automationDeletePost) | **POST** /automation/delete | Delete automations
-[**automationEditPost**](AutomationApi.md#automationEditPost) | **POST** /automation/edit/ | Edit automation
-[**automationGet**](AutomationApi.md#automationGet) | **GET** /automation | List automations
-[**automationMetadataIdGet**](AutomationApi.md#automationMetadataIdGet) | **GET** /automation/metadata/{id} | Automation metadata
+[**automationEditPost**](AutomationApi.md#automationEditPost) | **POST** /automation/edit/ | Edit an existing automation
+[**automationGet**](AutomationApi.md#automationGet) | **GET** /automation | List all automations
+[**automationMetadataIdGet**](AutomationApi.md#automationMetadataIdGet) | **GET** /automation/metadata/{id} | Get automation metadata
 
 
 <a name="automationCreatePost"></a>
 # **automationCreatePost**
 > AutomationResp automationCreatePost(body)
 
-Create automation
+Create a new automation
 
-Create new automation 
+Add a new automatic operation. 
 
 ### Example
 ```javascript
@@ -70,7 +70,7 @@ Name | Type | Description  | Notes
 
 Delete automations
 
-Delete automations 
+Delete a rule set for automatic operations. 
 
 ### Example
 ```javascript
@@ -121,9 +121,9 @@ Name | Type | Description  | Notes
 # **automationEditPost**
 > [AutomationResp] automationEditPost(body)
 
-Edit automation
+Edit an existing automation
 
-Edit automation 
+Update an existing rule for a specified automatic operation. 
 
 ### Example
 ```javascript
@@ -174,9 +174,9 @@ Name | Type | Description  | Notes
 # **automationGet**
 > [AutomationResp] automationGet()
 
-List automations
+List all automations
 
-List of all automations 
+Retrieve a list of all automations of the user. 
 
 ### Example
 ```javascript
@@ -221,9 +221,9 @@ This endpoint does not need any parameter.
 # **automationMetadataIdGet**
 > AutomationResp automationMetadataIdGet(id)
 
-Automation metadata
+Get automation metadata
 
-Get automation metadata 
+Get the automation metadata by the specified automation ID. 
 
 ### Example
 ```javascript
@@ -238,7 +238,7 @@ api_key.apiKey = 'YOUR API KEY';
 
 var apiInstance = new QuatrixApi.AutomationApi();
 
-var id = "id_example"; // String | ID of an automation
+var id = "id_example"; // String | automation ID
 
 
 var callback = function(error, data, response) {
@@ -255,7 +255,7 @@ apiInstance.automationMetadataIdGet(id, callback);
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **id** | [**String**](.md)| ID of an automation | 
+ **id** | [**String**](.md)| automation ID | 
 
 ### Return type
 

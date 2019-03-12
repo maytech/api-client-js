@@ -4,19 +4,19 @@ All URIs are relative to *https://api.quatrix.it/api/1.0*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**trackingActivityGet**](ActivityLogApi.md#trackingActivityGet) | **GET** /tracking/activity | Activity log
-[**trackingCsvGet**](ActivityLogApi.md#trackingCsvGet) | **GET** /tracking/csv | Download CSV file with Activity Log
-[**trackingDownloadsIdGet**](ActivityLogApi.md#trackingDownloadsIdGet) | **GET** /tracking/downloads/{id} | Share action file downloads
-[**trackingFilesIdGet**](ActivityLogApi.md#trackingFilesIdGet) | **GET** /tracking/files/{id} | Share action files
+[**trackingActivityGet**](ActivityLogApi.md#trackingActivityGet) | **GET** /tracking/activity | Get activity log
+[**trackingCsvGet**](ActivityLogApi.md#trackingCsvGet) | **GET** /tracking/csv | Download CSV file with activity log
+[**trackingDownloadsIdGet**](ActivityLogApi.md#trackingDownloadsIdGet) | **GET** /tracking/downloads/{id} | Get shared file downloads
+[**trackingFilesIdGet**](ActivityLogApi.md#trackingFilesIdGet) | **GET** /tracking/files/{id} | Get share action files
 
 
 <a name="trackingActivityGet"></a>
 # **trackingActivityGet**
-> [TrackingActivityRespItems] trackingActivityGet(opts)
+> [Object] trackingActivityGet(opts)
 
-Activity log
+Get activity log
 
-List activity (action) log. For details - https://dev.maytech.net/wiki/display/ISV3/Activity+Log 
+Retrieve the history of actions by the specified user (all visible users) for a given period. 
 
 ### Example
 ```javascript
@@ -32,8 +32,8 @@ api_key.apiKey = 'YOUR API KEY';
 var apiInstance = new QuatrixApi.ActivityLogApi();
 
 var opts = { 
-  'id': "id_example", // String | Log id
-  'userId': "userId_example", // String | User id
+  'id': "id_example", // String | Log ID
+  'userId': "userId_example", // String | User ID
   'limit': 100, // Number | Rows per page
   'from': 0, // Number | UTC timestamp
   'to': 8.14 // Number | UTC timestamp
@@ -53,15 +53,15 @@ apiInstance.trackingActivityGet(opts, callback);
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **id** | [**String**](.md)| Log id | [optional] 
- **userId** | [**String**](.md)| User id | [optional] 
+ **id** | [**String**](.md)| Log ID | [optional] 
+ **userId** | [**String**](.md)| User ID | [optional] 
  **limit** | **Number**| Rows per page | [optional] [default to 100]
  **from** | **Number**| UTC timestamp | [optional] [default to 0]
  **to** | **Number**| UTC timestamp | [optional] 
 
 ### Return type
 
-[**[TrackingActivityRespItems]**](TrackingActivityRespItems.md)
+**[Object]**
 
 ### Authorization
 
@@ -74,11 +74,11 @@ Name | Type | Description  | Notes
 
 <a name="trackingCsvGet"></a>
 # **trackingCsvGet**
-> [TrackingCSVRespItems] trackingCsvGet(opts)
+> [Object] trackingCsvGet(opts)
 
-Download CSV file with Activity Log
+Download CSV file with activity log
 
-Download CSV file content with Activity Log. For details - https://dev.maytech.net/wiki/display/ISV3/Activity+Log 
+Download a file with full activity log in the CSV format by given user ID. If the user ID is not specified, the activity of all manageable users should be displayed. The content of the file will display all actions performed in the account for a specified period. 
 
 ### Example
 ```javascript
@@ -94,7 +94,7 @@ api_key.apiKey = 'YOUR API KEY';
 var apiInstance = new QuatrixApi.ActivityLogApi();
 
 var opts = { 
-  'userId': "userId_example", // String | User id
+  'userId': "userId_example", // String | User ID
   'from': 8.14, // Number | UTC timestamp
   'to': 8.14 // Number | UTC timestamp
 };
@@ -113,13 +113,13 @@ apiInstance.trackingCsvGet(opts, callback);
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **userId** | [**String**](.md)| User id | [optional] 
+ **userId** | [**String**](.md)| User ID | [optional] 
  **from** | **Number**| UTC timestamp | [optional] 
  **to** | **Number**| UTC timestamp | [optional] 
 
 ### Return type
 
-[**[TrackingCSVRespItems]**](TrackingCSVRespItems.md)
+**[Object]**
 
 ### Authorization
 
@@ -128,15 +128,15 @@ Name | Type | Description  | Notes
 ### HTTP request headers
 
  - **Content-Type**: application/json
- - **Accept**: text/csv
+ - **Accept**: raw
 
 <a name="trackingDownloadsIdGet"></a>
 # **trackingDownloadsIdGet**
-> [TrackingDownloadsRespItems] trackingDownloadsIdGet(id)
+> [Object] trackingDownloadsIdGet(id)
 
-Share action file downloads
+Get shared file downloads
 
-List share action file downloads 
+Retrieve information about download actions of the file. 
 
 ### Example
 ```javascript
@@ -151,7 +151,7 @@ api_key.apiKey = 'YOUR API KEY';
 
 var apiInstance = new QuatrixApi.ActivityLogApi();
 
-var id = "id_example"; // String | Shared file ID
+var id = "id_example"; // String | Shared file ID - File ID from /tacking/files/id
 
 
 var callback = function(error, data, response) {
@@ -168,11 +168,11 @@ apiInstance.trackingDownloadsIdGet(id, callback);
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **id** | [**String**](.md)| Shared file ID | 
+ **id** | [**String**](.md)| Shared file ID - File ID from /tacking/files/id | 
 
 ### Return type
 
-[**[TrackingDownloadsRespItems]**](TrackingDownloadsRespItems.md)
+**[Object]**
 
 ### Authorization
 
@@ -185,11 +185,11 @@ Name | Type | Description  | Notes
 
 <a name="trackingFilesIdGet"></a>
 # **trackingFilesIdGet**
-> [TrackingFilesRespItems] trackingFilesIdGet(id)
+> [Object] trackingFilesIdGet(id)
 
-Share action files
+Get share action files
 
-List share action files 
+Retrieve a list of shared files by specified share action ID with the number of downloads. 
 
 ### Example
 ```javascript
@@ -204,7 +204,7 @@ api_key.apiKey = 'YOUR API KEY';
 
 var apiInstance = new QuatrixApi.ActivityLogApi();
 
-var id = "id_example"; // String | Share action ID
+var id = "id_example"; // String | Share ID
 
 
 var callback = function(error, data, response) {
@@ -221,11 +221,11 @@ apiInstance.trackingFilesIdGet(id, callback);
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **id** | [**String**](.md)| Share action ID | 
+ **id** | [**String**](.md)| Share ID | 
 
 ### Return type
 
-[**[TrackingFilesRespItems]**](TrackingFilesRespItems.md)
+**[Object]**
 
 ### Authorization
 

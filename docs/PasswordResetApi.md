@@ -4,7 +4,7 @@ All URIs are relative to *https://api.quatrix.it/api/1.0*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**resetPasswordMetadataIdGet**](PasswordResetApi.md#resetPasswordMetadataIdGet) | **GET** /reset-password/metadata/{id} | Password reset request metadata
+[**resetPasswordMetadataIdGet**](PasswordResetApi.md#resetPasswordMetadataIdGet) | **GET** /reset-password/metadata/{id} | Get password reset request metadata
 [**resetPasswordRequestPost**](PasswordResetApi.md#resetPasswordRequestPost) | **POST** /reset-password/request | Request password reset
 [**resetPasswordResetIdPost**](PasswordResetApi.md#resetPasswordResetIdPost) | **POST** /reset-password/reset/{id} | Reset password
 
@@ -13,9 +13,9 @@ Method | HTTP request | Description
 # **resetPasswordMetadataIdGet**
 > ResetPasswordMetadataResp resetPasswordMetadataIdGet(id)
 
-Password reset request metadata
+Get password reset request metadata
 
-Get password reset request metadata 
+Retrieve information about the password reset request. 
 
 ### Example
 ```javascript
@@ -68,7 +68,7 @@ Name | Type | Description  | Notes
 
 Request password reset
 
-Send request password reset email 
+Send an email with the request to reset password (including the link) to the user. 
 
 ### Example
 ```javascript
@@ -114,7 +114,7 @@ No authorization required
 
 Reset password
 
-Reset password 
+Change the password based on the existing password reset request. 
 
 ### Example
 ```javascript

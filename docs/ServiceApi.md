@@ -4,17 +4,17 @@ All URIs are relative to *https://api.quatrix.it/api/1.0*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**serviceGet**](ServiceApi.md#serviceGet) | **GET** /service | List services
-[**serviceMetadataIdGet**](ServiceApi.md#serviceMetadataIdGet) | **GET** /service/metadata/{id} | Service metadata
+[**serviceGet**](ServiceApi.md#serviceGet) | **GET** /service | List available services
+[**serviceMetadataIdGet**](ServiceApi.md#serviceMetadataIdGet) | **GET** /service/metadata/{id} | Get service metadata
 
 
 <a name="serviceGet"></a>
 # **serviceGet**
 > [ServiceResp] serviceGet()
 
-List services
+List available services
 
-List services 
+Retrieve a list of all available services. 
 
 ### Example
 ```javascript
@@ -59,9 +59,9 @@ This endpoint does not need any parameter.
 # **serviceMetadataIdGet**
 > ServiceResp serviceMetadataIdGet(id)
 
-Service metadata
+Get service metadata
 
-Get service metadata 
+Retrieve information about the service by given ID. 
 
 ### Example
 ```javascript
