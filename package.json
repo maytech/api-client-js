@@ -7,7 +7,7 @@
   "scripts": {
     "test:dev": "./node_modules/mocha/bin/mocha --recursive",
     "test:prod": "./node_modules/nyc/bin/nyc.js ./node_modules/mocha/bin/mocha --recursive --reporter mocha-junit-reporter --reporter-options mochaFile=./test/test-results.xml",
-    "check-coverage": "./node_modules/nyc/bin/nyc.js check-coverage --lines 60"
+    "check-coverage": "./node_modules/nyc/bin/nyc.js check-coverage --lines 30"
   },
   "browser": {
     "fs": false
@@ -17,7 +17,7 @@
   },
   "devDependencies": {
     "expect.js": "~0.3.1",
-    "mocha": "^6.0.2",
+    "mocha": "^6.2.0",
     "mocha-junit-reporter": "^1.18.0",
     "nyc": "^13.3.0",
     "sinon": "^7.2.7"

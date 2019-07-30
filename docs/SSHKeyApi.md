@@ -7,7 +7,8 @@ Method | HTTP request | Description
 [**sshKeyCreatePost**](SSHKeyApi.md#sshKeyCreatePost) | **POST** /ssh-key/create | Create a new SSH key
 [**sshKeyDeletePost**](SSHKeyApi.md#sshKeyDeletePost) | **POST** /ssh-key/delete | Delete SSH key
 [**sshKeyEditPost**](SSHKeyApi.md#sshKeyEditPost) | **POST** /ssh-key/edit | Edit SSH key metadata
-[**sshKeyGet**](SSHKeyApi.md#sshKeyGet) | **GET** /ssh-key | List available SSH keys
+[**sshKeyGet**](SSHKeyApi.md#sshKeyGet) | **GET** /ssh-key/ | List all available SSH keys
+[**sshKeyIdGet**](SSHKeyApi.md#sshKeyIdGet) | **GET** /ssh-key/{id} | List available SSH keys by the given user ID.
 [**sshKeyMetadataIdGet**](SSHKeyApi.md#sshKeyMetadataIdGet) | **GET** /ssh-key/metadata/{id} | Get SSH key metadata
 
 
@@ -174,9 +175,9 @@ Name | Type | Description  | Notes
 # **sshKeyGet**
 > [SshKeyResp] sshKeyGet()
 
-List available SSH keys
+List all available SSH keys
 
-Get a list of all SSH keys of the logged-in user. 
+Get SSH keys of all available users that the current logged-in user can manage. 
 
 ### Example
 ```javascript
@@ -203,6 +204,59 @@ apiInstance.sshKeyGet(callback);
 
 ### Parameters
 This endpoint does not need any parameter.
+
+### Return type
+
+[**[SshKeyResp]**](SshKeyResp.md)
+
+### Authorization
+
+[api_key](../README.md#api_key)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+<a name="sshKeyIdGet"></a>
+# **sshKeyIdGet**
+> [SshKeyResp] sshKeyIdGet(id)
+
+List available SSH keys by the given user ID.
+
+Get user&#39;s SSH keys by given user ID. 
+
+### Example
+```javascript
+var QuatrixApi = require('quatrix_api');
+var defaultClient = QuatrixApi.ApiClient.instance;
+
+// Configure API key authorization: api_key
+var api_key = defaultClient.authentications['api_key'];
+api_key.apiKey = 'YOUR API KEY';
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//api_key.apiKeyPrefix = 'Token';
+
+var apiInstance = new QuatrixApi.SSHKeyApi();
+
+var id = "id_example"; // String | SSH key ID
+
+
+var callback = function(error, data, response) {
+  if (error) {
+    console.error(error);
+  } else {
+    console.log('API called successfully. Returned data: ' + data);
+  }
+};
+apiInstance.sshKeyIdGet(id, callback);
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **id** | [**String**](.md)| SSH key ID | 
 
 ### Return type
 

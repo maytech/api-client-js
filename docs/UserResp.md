@@ -19,7 +19,6 @@ Name | Type | Description | Notes
 **effectiveOperations** | **Number** |  | [optional] 
 **homeOperations** | **Number** |  | [optional] 
 **language** | **String** |  | [optional] 
-**storageId** | **String** |  | [optional] 
 **hasKey** | **Boolean** |  | [optional] 
 **services** | [**[ShortUserService]**](ShortUserService.md) |  | [optional] 
 **uniqueLogin** | **String** |  | [optional] 

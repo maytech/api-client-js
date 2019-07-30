@@ -23,7 +23,6 @@
 #!docs/README.md
 
 scripts/add_model_test
-test/api/*.js
 .gitignore
 LICENCE
 package.json

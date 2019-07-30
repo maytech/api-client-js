@@ -12,7 +12,7 @@ Method | HTTP request | Description
 [**pgpKeyEditIdPost**](PGPApi.md#pgpKeyEditIdPost) | **POST** /pgp-key/edit/{id} | Edit PGP key
 [**pgpKeyMetadataIdGet**](PGPApi.md#pgpKeyMetadataIdGet) | **GET** /pgp-key/metadata/{id} | Get PGP key metadata
 [**pgpKeyRecipientsPost**](PGPApi.md#pgpKeyRecipientsPost) | **POST** /pgp-key/recipients | Get recipients&#39; PGP keys
-[**pgpKeyRequestIdsGet**](PGPApi.md#pgpKeyRequestIdsGet) | **GET** /pgp-key/request/{ids[]} | Request PGP key
+[**pgpKeyRequestPost**](PGPApi.md#pgpKeyRequestPost) | **POST** /pgp-key/request | Request PGP key
 [**userPgpKeyIdGet**](PGPApi.md#userPgpKeyIdGet) | **GET** /user/pgp-key/{id} | Get user&#39;s PGP key
 
 
@@ -447,9 +447,9 @@ Name | Type | Description  | Notes
  - **Content-Type**: application/json
  - **Accept**: application/json
 
-<a name="pgpKeyRequestIdsGet"></a>
-# **pgpKeyRequestIdsGet**
-> JobResp pgpKeyRequestIdsGet(ids)
+<a name="pgpKeyRequestPost"></a>
+# **pgpKeyRequestPost**
+> JobResp pgpKeyRequestPost(body)
 
 Request PGP key
 
@@ -468,7 +468,7 @@ api_key.apiKey = 'YOUR API KEY';
 
 var apiInstance = new QuatrixApi.PGPApi();
 
-var ids = "ids_example"; // String | ID of contact
+var body = new QuatrixApi.IdsReq(); // IdsReq | 
 
 
 var callback = function(error, data, response) {
@@ -478,14 +478,14 @@ var callback = function(error, data, response) {
     console.log('API called successfully. Returned data: ' + data);
   }
 };
-apiInstance.pgpKeyRequestIdsGet(ids, callback);
+apiInstance.pgpKeyRequestPost(body, callback);
 ```
 
 ### Parameters
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **ids** | [**String**](.md)| ID of contact | 
+ **body** | [**IdsReq**](IdsReq.md)|  | 
 
 ### Return type
 

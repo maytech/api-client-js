@@ -11,6 +11,7 @@ Method | HTTP request | Description
 [**fileDiffIdGet**](FileApi.md#fileDiffIdGet) | **GET** /file/diff/{id} | Display changes of the file
 [**fileDownloadIdGet**](FileApi.md#fileDownloadIdGet) | **GET** /file/download/{id} | Download file
 [**fileDownloadLinkPost**](FileApi.md#fileDownloadLinkPost) | **POST** /file/download-link | Get download link
+[**fileEmptyTrashIdPost**](FileApi.md#fileEmptyTrashIdPost) | **POST** /file/empty-trash/{id} | Empty trash
 [**fileInfoIdGet**](FileApi.md#fileInfoIdGet) | **GET** /file/info/{id} | Get file info
 [**fileMakedirPost**](FileApi.md#fileMakedirPost) | **POST** /file/makedir | Create a new folder
 [**fileMetadataGet**](FileApi.md#fileMetadataGet) | **GET** /file/metadata | Get metadata of files
@@ -396,6 +397,59 @@ Name | Type | Description  | Notes
 ### Return type
 
 [**IdResp**](IdResp.md)
+
+### Authorization
+
+[api_key](../README.md#api_key)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+<a name="fileEmptyTrashIdPost"></a>
+# **fileEmptyTrashIdPost**
+> [Object] fileEmptyTrashIdPost(id, )
+
+Empty trash
+
+Permanently delete all files from Trash by the given Trash ID. If the ID is not provided, empty the Trash of the logged-in user. 
+
+### Example
+```javascript
+var QuatrixApi = require('quatrix_api');
+var defaultClient = QuatrixApi.ApiClient.instance;
+
+// Configure API key authorization: api_key
+var api_key = defaultClient.authentications['api_key'];
+api_key.apiKey = 'YOUR API KEY';
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//api_key.apiKeyPrefix = 'Token';
+
+var apiInstance = new QuatrixApi.FileApi();
+
+var id = "id_example"; // String | ID of a file
+
+
+var callback = function(error, data, response) {
+  if (error) {
+    console.error(error);
+  } else {
+    console.log('API called successfully. Returned data: ' + data);
+  }
+};
+apiInstance.fileEmptyTrashIdPost(id, , callback);
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **id** | [**String**](.md)| ID of a file | 
+
+### Return type
+
+**[Object]**
 
 ### Authorization
 

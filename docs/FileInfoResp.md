@@ -10,8 +10,10 @@ Name | Type | Description | Notes
 **name** | **String** | File name | [optional] 
 **size** | **Number** | File size in bytes | [optional] 
 **type** | **String** | File type | [optional] 
-**fileOwner** | **Object** | Owner of Folder/File | [optional] 
-**actionRole** | **Object** | Role that created/uploaded Folder/File | [optional] 
-**paths** | **Object** | Path and Type of path to File | [optional] 
+**fileOwner** | **Object** | Owner of the file | [optional] 
+**actionRole** | **Object** | User role who created or uploaded the file | [optional] 
+**paths** | **Object** | Path and type of path to the file | [optional] 
+**antivirusCheck** | **String** | Antivirus check result. Null if file is not infected | [optional] 
+**widgetMetadata** | **Object** | The data is submitted with the file, if it was uploaded via widget | [optional] 
 
 

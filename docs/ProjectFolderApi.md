@@ -78,7 +78,7 @@ Name | Type | Description  | Notes
 
 Create a project folder
 
-Create a new project folder for a user. 
+Create a new project folder for a user. Learn more how to create a project folder in our [API guide](https://docs.maytech.net/display/MD/Creating+Project+Folders). 
 
 ### Example
 ```javascript
