@@ -166,6 +166,10 @@
       expect(instance).to.have.property("unique_login");
     });
 
+    it('should have the property sftpLogin (base name: "sftp_login")', function() {
+      expect(instance).to.have.property("sftp_login");
+    });
+
     it('should have the property authMethods (base name: "auth_methods")', function() {
       expect(instance).to.have.property("auth_methods");
     });

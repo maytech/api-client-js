@@ -151,6 +151,9 @@ Class | Method | HTTP request | Description
 *QuatrixApi.AutomationApi* | [**automationGet**](docs/AutomationApi.md#automationGet) | **GET** /automation | List all automations
 *QuatrixApi.AutomationApi* | [**automationMetadataIdGet**](docs/AutomationApi.md#automationMetadataIdGet) | **GET** /automation/metadata/{id} | Get automation metadata
 *QuatrixApi.BillingApi* | [**billingUpgradePost**](docs/BillingApi.md#billingUpgradePost) | **POST** /billing/upgrade | Upgrade the user&#39;s account
+*QuatrixApi.BrandingApi* | [**brandingGet**](docs/BrandingApi.md#brandingGet) | **GET** /branding | Get branding for account
+*QuatrixApi.BrandingApi* | [**brandingPost**](docs/BrandingApi.md#brandingPost) | **POST** /branding | Create or update branding for account
+*QuatrixApi.BrandingApi* | [**brandingPreviewPost**](docs/BrandingApi.md#brandingPreviewPost) | **POST** /branding/preview | Render html from markdown
 *QuatrixApi.ContactApi* | [**contactCreatePost**](docs/ContactApi.md#contactCreatePost) | **POST** /contact/create | Create a new contact
 *QuatrixApi.ContactApi* | [**contactDeletePost**](docs/ContactApi.md#contactDeletePost) | **POST** /contact/delete | Delete a contact
 *QuatrixApi.ContactApi* | [**contactEditIdPost**](docs/ContactApi.md#contactEditIdPost) | **POST** /contact/edit/{id} | Edit contact metadata
@@ -284,6 +287,9 @@ Class | Method | HTTP request | Description
  - [QuatrixApi.APIKeyCreateReq](docs/APIKeyCreateReq.md)
  - [QuatrixApi.APIKeyResp](docs/APIKeyResp.md)
  - [QuatrixApi.APIKeyUpdateReq](docs/APIKeyUpdateReq.md)
+ - [QuatrixApi.AccountBranding](docs/AccountBranding.md)
+ - [QuatrixApi.AccountBrandingPreview](docs/AccountBrandingPreview.md)
+ - [QuatrixApi.AccountBrandingReq](docs/AccountBrandingReq.md)
  - [QuatrixApi.AccountInfoResp](docs/AccountInfoResp.md)
  - [QuatrixApi.AccountListRespItems](docs/AccountListRespItems.md)
  - [QuatrixApi.AccountMetadataResp](docs/AccountMetadataResp.md)

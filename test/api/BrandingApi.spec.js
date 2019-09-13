@@ -30,7 +30,7 @@
   var instance;
 
   beforeEach(function() {
-    instance = new QuatrixApi.APIKeyResp();
+    instance = new QuatrixApi.BrandingApi();
   });
 
   var getProperty = function(object, getter, property) {
@@ -49,43 +49,37 @@
       object[property] = value;
   }
 
-  describe('APIKeyResp', function() {
-    it('should create an instance of APIKeyResp', function() {
-      expect(instance).to.be.a(QuatrixApi.APIKeyResp);
+  describe('BrandingApi', function() {
+    describe('brandingGet', function() {
+      it('should call brandingGet successfully', function(done) {
+        //uncomment below and update the code to test brandingGet
+        //instance.brandingGet(function(error) {
+        //  if (error) throw error;
+        //expect().to.be();
+        //});
+        done();
+      });
     });
-
-    it('should have the property id (base name: "id")', function() {
-      expect(instance).to.have.property("id");
+    describe('brandingPost', function() {
+      it('should call brandingPost successfully', function(done) {
+        //uncomment below and update the code to test brandingPost
+        //instance.brandingPost(function(error) {
+        //  if (error) throw error;
+        //expect().to.be();
+        //});
+        done();
+      });
     });
-
-    it('should have the property roleId (base name: "role_id")', function() {
-      expect(instance).to.have.property("role_id");
+    describe('brandingPreviewPost', function() {
+      it('should call brandingPreviewPost successfully', function(done) {
+        //uncomment below and update the code to test brandingPreviewPost
+        //instance.brandingPreviewPost(function(error) {
+        //  if (error) throw error;
+        //expect().to.be();
+        //});
+        done();
+      });
     });
-
-    it('should have the property email (base name: "email")', function() {
-      expect(instance).to.have.property("email");
-    });
-
-    it('should have the property key (base name: "key")', function() {
-      expect(instance).to.have.property("key");
-    });
-
-    it('should have the property hint (base name: "hint")', function() {
-      expect(instance).to.have.property("hint");
-    });
-
-    it('should have the property created (base name: "created")', function() {
-      expect(instance).to.have.property("created");
-    });
-
-    it('should have the property modified (base name: "modified")', function() {
-      expect(instance).to.have.property("modified");
-    });
-
-    it('should have the property status (base name: "status")', function() {
-      expect(instance).to.have.property("status");
-    });
-
   });
 
 }));

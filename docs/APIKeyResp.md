@@ -8,7 +8,7 @@ Name | Type | Description | Notes
 **email** | **String** |  | [optional] 
 **key** | **String** |  | [optional] 
 **hint** | **String** |  | [optional] 
-**crteated** | **Number** |  | [optional] 
+**created** | **Number** |  | [optional] 
 **modified** | **Number** |  | [optional] 
 **status** | **String** |  | [optional] 
 

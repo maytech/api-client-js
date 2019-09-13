@@ -130,8 +130,8 @@
       expect(instance).to.have.property("unique_login");
     });
 
-    it('should have the property customSftpHome (base name: "custom_sftp_home")', function() {
-      expect(instance).to.have.property("custom_sftp_home");
+    it('should have the property sftpLogin (base name: "sftp_login")', function() {
+      expect(instance).to.have.property("sftp_login");
     });
 
     it('should have the property sftpHome (base name: "sftp_home")', function() {

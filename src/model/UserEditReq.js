@@ -114,8 +114,8 @@
       if (data.hasOwnProperty('services')) {
         obj['services'] = ApiClient.convertToType(data['services'], ['String']);
       }
-      if (data.hasOwnProperty('custom_sftp_home')) {
-        obj['custom_sftp_home'] = ApiClient.convertToType(data['custom_sftp_home'], 'Boolean');
+      if (data.hasOwnProperty('sftp_login')) {
+        obj['sftp_login'] = ApiClient.convertToType(data['sftp_login'], 'String');
       }
     }
     return obj;
@@ -174,9 +174,9 @@
    */
   exports.prototype['services'] = undefined;
   /**
-   * @member {Boolean} custom_sftp_home
+   * @member {String} sftp_login
    */
-  exports.prototype['custom_sftp_home'] = undefined;
+  exports.prototype['sftp_login'] = undefined;
 
 
   /**

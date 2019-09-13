@@ -79,6 +79,7 @@
 
 
 
+
   };
 
   /**
@@ -175,6 +176,9 @@
       }
       if (data.hasOwnProperty('unique_login')) {
         obj['unique_login'] = ApiClient.convertToType(data['unique_login'], 'String');
+      }
+      if (data.hasOwnProperty('sftp_login')) {
+        obj['sftp_login'] = ApiClient.convertToType(data['sftp_login'], 'String');
       }
       if (data.hasOwnProperty('auth_methods')) {
         obj['auth_methods'] = ApiClient.convertToType(data['auth_methods'], ['String']);
@@ -304,6 +308,10 @@
    * @member {String} unique_login
    */
   exports.prototype['unique_login'] = undefined;
+  /**
+   * @member {String} sftp_login
+   */
+  exports.prototype['sftp_login'] = undefined;
   /**
    * @member {Array.<String>} auth_methods
    */

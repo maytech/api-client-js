@@ -22,7 +22,7 @@ Name | Type | Description | Notes
 **hasKey** | **Boolean** |  | [optional] 
 **services** | [**[ShortUserService]**](ShortUserService.md) |  | [optional] 
 **uniqueLogin** | **String** |  | [optional] 
-**customSftpHome** | **Boolean** |  | [optional] 
+**sftpLogin** | **String** |  | [optional] 
 **sftpHome** | **String** |  | [optional] 
 **readonly** | **Boolean** |  | [optional] 
 **authMethods** | **[String]** |  | [optional] 

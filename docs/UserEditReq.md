@@ -16,7 +16,7 @@ Name | Type | Description | Notes
 **language** | **String** |  | [optional] 
 **groups** | **[String]** |  | [optional] 
 **services** | **[String]** |  | [optional] 
-**customSftpHome** | **Boolean** |  | [optional] 
+**sftpLogin** | **String** |  | [optional] 
 
 
 <a name="StatusEnum"></a>

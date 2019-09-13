@@ -31,6 +31,7 @@ Name | Type | Description | Notes
 **services** | [**[ShortUserService]**](ShortUserService.md) |  | [optional] 
 **shareTypes** | [**ProfileRespShareTypes**](ProfileRespShareTypes.md) |  | [optional] 
 **uniqueLogin** | **String** |  | [optional] 
+**sftpLogin** | **String** |  | [optional] 
 **authMethods** | **[String]** |  | [optional] 
 **accountStatus** | **String** |  | [optional] 
 **sftpUrl** | **String** |  | [optional] 

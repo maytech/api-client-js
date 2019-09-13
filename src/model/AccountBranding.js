@@ -25,7 +25,7 @@
     if (!root.QuatrixApi) {
       root.QuatrixApi = {};
     }
-    root.QuatrixApi.APIKeyResp = factory(root.QuatrixApi.ApiClient);
+    root.QuatrixApi.AccountBranding = factory(root.QuatrixApi.ApiClient);
   }
 }(this, function(ApiClient) {
   'use strict';
@@ -34,14 +34,14 @@
 
 
   /**
-   * The APIKeyResp model module.
-   * @module model/APIKeyResp
+   * The AccountBranding model module.
+   * @module model/AccountBranding
    * @version 1.0.0
    */
 
   /**
-   * Constructs a new <code>APIKeyResp</code>.
-   * @alias module:model/APIKeyResp
+   * Constructs a new <code>AccountBranding</code>.
+   * @alias module:model/AccountBranding
    * @class
    */
   var exports = function() {
@@ -58,36 +58,36 @@
   };
 
   /**
-   * Constructs a <code>APIKeyResp</code> from a plain JavaScript object, optionally creating a new instance.
+   * Constructs a <code>AccountBranding</code> from a plain JavaScript object, optionally creating a new instance.
    * Copies all relevant properties from <code>data</code> to <code>obj</code> if supplied or a new instance if not.
    * @param {Object} data The plain JavaScript object bearing properties of interest.
-   * @param {module:model/APIKeyResp} obj Optional instance to populate.
-   * @return {module:model/APIKeyResp} The populated <code>APIKeyResp</code> instance.
+   * @param {module:model/AccountBranding} obj Optional instance to populate.
+   * @return {module:model/AccountBranding} The populated <code>AccountBranding</code> instance.
    */
   exports.constructFromObject = function(data, obj) {
     if (data) {
       obj = obj || new exports();
 
-      if (data.hasOwnProperty('id')) {
-        obj['id'] = ApiClient.convertToType(data['id'], 'String');
+      if (data.hasOwnProperty('banner_text')) {
+        obj['banner_text'] = ApiClient.convertToType(data['banner_text'], 'String');
       }
-      if (data.hasOwnProperty('role_id')) {
-        obj['role_id'] = ApiClient.convertToType(data['role_id'], 'String');
+      if (data.hasOwnProperty('sender_name')) {
+        obj['sender_name'] = ApiClient.convertToType(data['sender_name'], 'String');
       }
-      if (data.hasOwnProperty('email')) {
-        obj['email'] = ApiClient.convertToType(data['email'], 'String');
+      if (data.hasOwnProperty('sender_email')) {
+        obj['sender_email'] = ApiClient.convertToType(data['sender_email'], 'String');
       }
-      if (data.hasOwnProperty('key')) {
-        obj['key'] = ApiClient.convertToType(data['key'], 'String');
+      if (data.hasOwnProperty('email_validated')) {
+        obj['email_validated'] = ApiClient.convertToType(data['email_validated'], 'Boolean');
       }
-      if (data.hasOwnProperty('hint')) {
-        obj['hint'] = ApiClient.convertToType(data['hint'], 'String');
+      if (data.hasOwnProperty('email_title_prefix')) {
+        obj['email_title_prefix'] = ApiClient.convertToType(data['email_title_prefix'], 'String');
       }
-      if (data.hasOwnProperty('created')) {
-        obj['created'] = ApiClient.convertToType(data['created'], 'Number');
+      if (data.hasOwnProperty('body_header')) {
+        obj['body_header'] = ApiClient.convertToType(data['body_header'], 'String');
       }
-      if (data.hasOwnProperty('modified')) {
-        obj['modified'] = ApiClient.convertToType(data['modified'], 'Number');
+      if (data.hasOwnProperty('body_footer')) {
+        obj['body_footer'] = ApiClient.convertToType(data['body_footer'], 'String');
       }
       if (data.hasOwnProperty('status')) {
         obj['status'] = ApiClient.convertToType(data['status'], 'String');
@@ -97,35 +97,35 @@
   }
 
   /**
-   * @member {String} id
+   * @member {String} banner_text
    */
-  exports.prototype['id'] = undefined;
+  exports.prototype['banner_text'] = undefined;
   /**
-   * @member {String} role_id
+   * @member {String} sender_name
    */
-  exports.prototype['role_id'] = undefined;
+  exports.prototype['sender_name'] = undefined;
   /**
-   * @member {String} email
+   * @member {String} sender_email
    */
-  exports.prototype['email'] = undefined;
+  exports.prototype['sender_email'] = undefined;
   /**
-   * @member {String} key
+   * @member {Boolean} email_validated
    */
-  exports.prototype['key'] = undefined;
+  exports.prototype['email_validated'] = undefined;
   /**
-   * @member {String} hint
+   * @member {String} email_title_prefix
    */
-  exports.prototype['hint'] = undefined;
+  exports.prototype['email_title_prefix'] = undefined;
   /**
-   * @member {Number} created
+   * @member {String} body_header
    */
-  exports.prototype['created'] = undefined;
+  exports.prototype['body_header'] = undefined;
   /**
-   * @member {Number} modified
+   * @member {String} body_footer
    */
-  exports.prototype['modified'] = undefined;
+  exports.prototype['body_footer'] = undefined;
   /**
-   * @member {module:model/APIKeyResp.StatusEnum} status
+   * @member {module:model/AccountBranding.StatusEnum} status
    */
   exports.prototype['status'] = undefined;
 

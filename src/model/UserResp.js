@@ -143,8 +143,8 @@
       if (data.hasOwnProperty('unique_login')) {
         obj['unique_login'] = ApiClient.convertToType(data['unique_login'], 'String');
       }
-      if (data.hasOwnProperty('custom_sftp_home')) {
-        obj['custom_sftp_home'] = ApiClient.convertToType(data['custom_sftp_home'], 'Boolean');
+      if (data.hasOwnProperty('sftp_login')) {
+        obj['sftp_login'] = ApiClient.convertToType(data['sftp_login'], 'String');
       }
       if (data.hasOwnProperty('sftp_home')) {
         obj['sftp_home'] = ApiClient.convertToType(data['sftp_home'], 'String');
@@ -245,9 +245,9 @@
    */
   exports.prototype['unique_login'] = undefined;
   /**
-   * @member {Boolean} custom_sftp_home
+   * @member {String} sftp_login
    */
-  exports.prototype['custom_sftp_home'] = undefined;
+  exports.prototype['sftp_login'] = undefined;
   /**
    * @member {String} sftp_home
    */

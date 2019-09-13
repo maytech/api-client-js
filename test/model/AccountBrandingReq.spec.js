@@ -30,7 +30,7 @@
   var instance;
 
   beforeEach(function() {
-    instance = new QuatrixApi.APIKeyResp();
+    instance = new QuatrixApi.AccountBrandingReq();
   });
 
   var getProperty = function(object, getter, property) {
@@ -49,41 +49,33 @@
       object[property] = value;
   }
 
-  describe('APIKeyResp', function() {
-    it('should create an instance of APIKeyResp', function() {
-      expect(instance).to.be.a(QuatrixApi.APIKeyResp);
+  describe('AccountBrandingReq', function() {
+    it('should create an instance of AccountBrandingReq', function() {
+      expect(instance).to.be.a(QuatrixApi.AccountBrandingReq);
     });
 
-    it('should have the property id (base name: "id")', function() {
-      expect(instance).to.have.property("id");
+    it('should have the property bannerText (base name: "banner_text")', function() {
+      expect(instance).to.have.property("banner_text");
     });
 
-    it('should have the property roleId (base name: "role_id")', function() {
-      expect(instance).to.have.property("role_id");
+    it('should have the property senderName (base name: "sender_name")', function() {
+      expect(instance).to.have.property("sender_name");
     });
 
-    it('should have the property email (base name: "email")', function() {
-      expect(instance).to.have.property("email");
+    it('should have the property senderEmail (base name: "sender_email")', function() {
+      expect(instance).to.have.property("sender_email");
     });
 
-    it('should have the property key (base name: "key")', function() {
-      expect(instance).to.have.property("key");
+    it('should have the property emailTitlePrefix (base name: "email_title_prefix")', function() {
+      expect(instance).to.have.property("email_title_prefix");
     });
 
-    it('should have the property hint (base name: "hint")', function() {
-      expect(instance).to.have.property("hint");
+    it('should have the property bodyHeader (base name: "body_header")', function() {
+      expect(instance).to.have.property("body_header");
     });
 
-    it('should have the property created (base name: "created")', function() {
-      expect(instance).to.have.property("created");
-    });
-
-    it('should have the property modified (base name: "modified")', function() {
-      expect(instance).to.have.property("modified");
-    });
-
-    it('should have the property status (base name: "status")', function() {
-      expect(instance).to.have.property("status");
+    it('should have the property bodyFooter (base name: "body_footer")', function() {
+      expect(instance).to.have.property("body_footer");
     });
 
   });
