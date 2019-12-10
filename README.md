@@ -150,7 +150,6 @@ Class | Method | HTTP request | Description
 *QuatrixApi.AutomationApi* | [**automationEditPost**](docs/AutomationApi.md#automationEditPost) | **POST** /automation/edit/ | Edit an existing automation
 *QuatrixApi.AutomationApi* | [**automationGet**](docs/AutomationApi.md#automationGet) | **GET** /automation | List all automations
 *QuatrixApi.AutomationApi* | [**automationMetadataIdGet**](docs/AutomationApi.md#automationMetadataIdGet) | **GET** /automation/metadata/{id} | Get automation metadata
-*QuatrixApi.BillingApi* | [**billingUpgradePost**](docs/BillingApi.md#billingUpgradePost) | **POST** /billing/upgrade | Upgrade the user&#39;s account
 *QuatrixApi.BrandingApi* | [**brandingGet**](docs/BrandingApi.md#brandingGet) | **GET** /branding | Get branding for account
 *QuatrixApi.BrandingApi* | [**brandingPost**](docs/BrandingApi.md#brandingPost) | **POST** /branding | Create or update branding for account
 *QuatrixApi.BrandingApi* | [**brandingPreviewPost**](docs/BrandingApi.md#brandingPreviewPost) | **POST** /branding/preview | Render html from markdown
@@ -299,8 +298,6 @@ Class | Method | HTTP request | Description
  - [QuatrixApi.AutomationEditReq](docs/AutomationEditReq.md)
  - [QuatrixApi.AutomationOptions](docs/AutomationOptions.md)
  - [QuatrixApi.AutomationResp](docs/AutomationResp.md)
- - [QuatrixApi.BillingUpgradeReq](docs/BillingUpgradeReq.md)
- - [QuatrixApi.BillingUpgradeResp](docs/BillingUpgradeResp.md)
  - [QuatrixApi.ContactCreateReq](docs/ContactCreateReq.md)
  - [QuatrixApi.ContactDeleteRespItems](docs/ContactDeleteRespItems.md)
  - [QuatrixApi.ContactEditResp](docs/ContactEditResp.md)
