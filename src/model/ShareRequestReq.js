@@ -50,6 +50,7 @@
 
 
 
+
     _this['ids'] = ids;
 
 
@@ -68,6 +69,9 @@
 
       if (data.hasOwnProperty('return_pgp_encrypted')) {
         obj['return_pgp_encrypted'] = ApiClient.convertToType(data['return_pgp_encrypted'], 'Boolean');
+      }
+      if (data.hasOwnProperty('request_auth')) {
+        obj['request_auth'] = ApiClient.convertToType(data['request_auth'], 'Boolean');
       }
       if (data.hasOwnProperty('send_email')) {
         obj['send_email'] = ApiClient.convertToType(data['send_email'], 'Boolean');
@@ -91,6 +95,12 @@
    * @default false
    */
   exports.prototype['return_pgp_encrypted'] = false;
+  /**
+   * Defines if return files will require authentication
+   * @member {Boolean} request_auth
+   * @default true
+   */
+  exports.prototype['request_auth'] = true;
   /**
    * @member {Boolean} send_email
    * @default true

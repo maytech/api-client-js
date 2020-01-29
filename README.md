@@ -144,7 +144,7 @@ Class | Method | HTTP request | Description
 *QuatrixApi.AuthApi* | [**sessionLoginGet**](docs/AuthApi.md#sessionLoginGet) | **GET** /session/login | Log in and get session ID details
 *QuatrixApi.AuthApi* | [**sessionLoginPost**](docs/AuthApi.md#sessionLoginPost) | **POST** /session/login | Log in to the account using MFA
 *QuatrixApi.AuthApi* | [**sessionLogoutGet**](docs/AuthApi.md#sessionLogoutGet) | **GET** /session/logout | Close the user&#39;s session
-*QuatrixApi.AuthApi* | [**sessionUnblockCaptchaPost**](docs/AuthApi.md#sessionUnblockCaptchaPost) | **POST** /session/unblock-captcha | Unblock the session using CAPTCHA
+*QuatrixApi.AuthApi* | [**sessionUnblockCaptchaGet**](docs/AuthApi.md#sessionUnblockCaptchaGet) | **GET** /session/unblock-captcha | Unblock the session using CAPTCHA
 *QuatrixApi.AutomationApi* | [**automationCreatePost**](docs/AutomationApi.md#automationCreatePost) | **POST** /automation/create | Create a new automation
 *QuatrixApi.AutomationApi* | [**automationDeletePost**](docs/AutomationApi.md#automationDeletePost) | **POST** /automation/delete | Delete automations
 *QuatrixApi.AutomationApi* | [**automationEditPost**](docs/AutomationApi.md#automationEditPost) | **POST** /automation/edit/ | Edit an existing automation
@@ -418,7 +418,6 @@ Class | Method | HTTP request | Description
  - [QuatrixApi.TrackingFilesRespItems](docs/TrackingFilesRespItems.md)
  - [QuatrixApi.TrackingIdRespItems](docs/TrackingIdRespItems.md)
  - [QuatrixApi.TrackingRespItems](docs/TrackingRespItems.md)
- - [QuatrixApi.UnblockCaptchaReq](docs/UnblockCaptchaReq.md)
  - [QuatrixApi.UploadFinalizeResp](docs/UploadFinalizeResp.md)
  - [QuatrixApi.UploadLinkReq](docs/UploadLinkReq.md)
  - [QuatrixApi.UserCreateReq](docs/UserCreateReq.md)

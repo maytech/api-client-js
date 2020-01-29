@@ -86,6 +86,10 @@
       expect(instance).to.have.property("return_files");
     });
 
+    it('should have the property requestAuth (base name: "request_auth")', function() {
+      expect(instance).to.have.property("request_auth");
+    });
+
     it('should have the property pgpEncrypted (base name: "pgp_encrypted")', function() {
       expect(instance).to.have.property("pgp_encrypted");
     });

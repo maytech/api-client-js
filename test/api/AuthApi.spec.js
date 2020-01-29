@@ -90,10 +90,10 @@
         done();
       });
     });
-    describe('sessionUnblockCaptchaPost', function() {
-      it('should call sessionUnblockCaptchaPost successfully', function(done) {
-        //uncomment below and update the code to test sessionUnblockCaptchaPost
-        //instance.sessionUnblockCaptchaPost(function(error) {
+    describe('sessionUnblockCaptchaGet', function() {
+      it('should call sessionUnblockCaptchaGet successfully', function(done) {
+        //uncomment below and update the code to test sessionUnblockCaptchaGet
+        //instance.sessionUnblockCaptchaGet(function(error) {
         //  if (error) throw error;
         //expect().to.be();
         //});

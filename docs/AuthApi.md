@@ -8,7 +8,7 @@ Method | HTTP request | Description
 [**sessionLoginGet**](AuthApi.md#sessionLoginGet) | **GET** /session/login | Log in and get session ID details
 [**sessionLoginPost**](AuthApi.md#sessionLoginPost) | **POST** /session/login | Log in to the account using MFA
 [**sessionLogoutGet**](AuthApi.md#sessionLogoutGet) | **GET** /session/logout | Close the user&#39;s session
-[**sessionUnblockCaptchaPost**](AuthApi.md#sessionUnblockCaptchaPost) | **POST** /session/unblock-captcha | Unblock the session using CAPTCHA
+[**sessionUnblockCaptchaGet**](AuthApi.md#sessionUnblockCaptchaGet) | **GET** /session/unblock-captcha | Unblock the session using CAPTCHA
 
 
 <a name="sessionKeepaliveGet"></a>
@@ -204,9 +204,9 @@ null (empty response body)
  - **Content-Type**: application/json
  - **Accept**: application/json
 
-<a name="sessionUnblockCaptchaPost"></a>
-# **sessionUnblockCaptchaPost**
-> SessionUnblockCaptchaResp sessionUnblockCaptchaPost(body)
+<a name="sessionUnblockCaptchaGet"></a>
+# **sessionUnblockCaptchaGet**
+> SessionUnblockCaptchaResp sessionUnblockCaptchaGet(token)
 
 Unblock the session using CAPTCHA
 
@@ -225,7 +225,7 @@ api_key.apiKey = 'YOUR API KEY';
 
 var apiInstance = new QuatrixApi.AuthApi();
 
-var body = new QuatrixApi.UnblockCaptchaReq(); // UnblockCaptchaReq | 
+var token = "token_example"; // String | 
 
 
 var callback = function(error, data, response) {
@@ -235,14 +235,14 @@ var callback = function(error, data, response) {
     console.log('API called successfully. Returned data: ' + data);
   }
 };
-apiInstance.sessionUnblockCaptchaPost(body, callback);
+apiInstance.sessionUnblockCaptchaGet(token, callback);
 ```
 
 ### Parameters
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**UnblockCaptchaReq**](UnblockCaptchaReq.md)|  | 
+ **token** | **String**|  | 
 
 ### Return type
 

@@ -16,18 +16,18 @@
 (function(root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
-    define(['ApiClient', 'model/ErrorModel', 'model/SessionLoginPostResp', 'model/SessionLoginResp', 'model/SessionUnblockCaptchaResp', 'model/UnblockCaptchaReq'], factory);
+    define(['ApiClient', 'model/ErrorModel', 'model/SessionLoginPostResp', 'model/SessionLoginResp', 'model/SessionUnblockCaptchaResp'], factory);
   } else if (typeof module === 'object' && module.exports) {
     // CommonJS-like environments that support module.exports, like Node.
-    module.exports = factory(require('../ApiClient'), require('../model/ErrorModel'), require('../model/SessionLoginPostResp'), require('../model/SessionLoginResp'), require('../model/SessionUnblockCaptchaResp'), require('../model/UnblockCaptchaReq'));
+    module.exports = factory(require('../ApiClient'), require('../model/ErrorModel'), require('../model/SessionLoginPostResp'), require('../model/SessionLoginResp'), require('../model/SessionUnblockCaptchaResp'));
   } else {
     // Browser globals (root is window)
     if (!root.QuatrixApi) {
       root.QuatrixApi = {};
     }
-    root.QuatrixApi.AuthApi = factory(root.QuatrixApi.ApiClient, root.QuatrixApi.ErrorModel, root.QuatrixApi.SessionLoginPostResp, root.QuatrixApi.SessionLoginResp, root.QuatrixApi.SessionUnblockCaptchaResp, root.QuatrixApi.UnblockCaptchaReq);
+    root.QuatrixApi.AuthApi = factory(root.QuatrixApi.ApiClient, root.QuatrixApi.ErrorModel, root.QuatrixApi.SessionLoginPostResp, root.QuatrixApi.SessionLoginResp, root.QuatrixApi.SessionUnblockCaptchaResp);
   }
-}(this, function(ApiClient, ErrorModel, SessionLoginPostResp, SessionLoginResp, SessionUnblockCaptchaResp, UnblockCaptchaReq) {
+}(this, function(ApiClient, ErrorModel, SessionLoginPostResp, SessionLoginResp, SessionUnblockCaptchaResp) {
   'use strict';
 
   /**
@@ -216,8 +216,8 @@
     }
 
     /**
-     * Callback function to receive the result of the sessionUnblockCaptchaPost operation.
-     * @callback module:api/AuthApi~sessionUnblockCaptchaPostCallback
+     * Callback function to receive the result of the sessionUnblockCaptchaGet operation.
+     * @callback module:api/AuthApi~sessionUnblockCaptchaGetCallback
      * @param {String} error Error message, if any.
      * @param {module:model/SessionUnblockCaptchaResp} data The data returned by the service call.
      * @param {String} response The complete HTTP response.
@@ -226,22 +226,23 @@
     /**
      * Unblock the session using CAPTCHA
      * Enter CAPTCHA to log in the user to the current session. 
-     * @param {module:model/UnblockCaptchaReq} body 
-     * @param {module:api/AuthApi~sessionUnblockCaptchaPostCallback} callback The callback function, accepting three arguments: error, data, response
+     * @param {String} token 
+     * @param {module:api/AuthApi~sessionUnblockCaptchaGetCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/SessionUnblockCaptchaResp}
      */
-    this.sessionUnblockCaptchaPost = function(body, callback) {
-      var postBody = body;
+    this.sessionUnblockCaptchaGet = function(token, callback) {
+      var postBody = null;
 
-      // verify the required parameter 'body' is set
-      if (body === undefined || body === null) {
-        throw new Error("Missing the required parameter 'body' when calling sessionUnblockCaptchaPost");
+      // verify the required parameter 'token' is set
+      if (token === undefined || token === null) {
+        throw new Error("Missing the required parameter 'token' when calling sessionUnblockCaptchaGet");
       }
 
 
       var pathParams = {
       };
       var queryParams = {
+        'token': token,
       };
       var collectionQueryParams = {
       };
@@ -256,7 +257,7 @@
       var returnType = SessionUnblockCaptchaResp;
 
       return this.apiClient.callApi(
-        '/session/unblock-captcha', 'POST',
+        '/session/unblock-captcha', 'GET',
         pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, callback
       );

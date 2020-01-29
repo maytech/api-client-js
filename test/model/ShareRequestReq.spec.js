@@ -58,6 +58,10 @@
       expect(instance).to.have.property("return_pgp_encrypted");
     });
 
+    it('should have the property requestAuth (base name: "request_auth")', function() {
+      expect(instance).to.have.property("request_auth");
+    });
+
     it('should have the property sendEmail (base name: "send_email")', function() {
       expect(instance).to.have.property("send_email");
     });
