@@ -579,5 +579,5 @@ No authorization required
 ### HTTP request headers
 
  - **Content-Type**: application/json
- - **Accept**: raw
+ - **Accept**: application/json
 

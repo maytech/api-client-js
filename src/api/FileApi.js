@@ -158,7 +158,7 @@
 
     /**
      * Download CSV file with Folder Content
-     * Return CSV file with information containing file metadata. It contains the path for each file displaying the hierarchy of files. This API returns the content-type: ”raw\&quot;. 
+     * Return CSV file with information containing file metadata. It contains the path for each file displaying the hierarchy of files. 
      * @param {String} id File action ID
      * @param {module:api/FileApi~fileCsvIdGetCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/FileCsvResp}

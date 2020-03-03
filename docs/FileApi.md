@@ -141,7 +141,7 @@ Name | Type | Description  | Notes
 
 Download CSV file with Folder Content
 
-Return CSV file with information containing file metadata. It contains the path for each file displaying the hierarchy of files. This API returns the content-type: ”raw\&quot;. 
+Return CSV file with information containing file metadata. It contains the path for each file displaying the hierarchy of files. 
 
 ### Example
 ```javascript

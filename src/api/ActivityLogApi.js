@@ -139,7 +139,7 @@
 
       var authNames = ['api_key'];
       var contentTypes = ['application/json'];
-      var accepts = ['raw'];
+      var accepts = ['text/csv'];
       var returnType = [Object];
 
       return this.apiClient.callApi(

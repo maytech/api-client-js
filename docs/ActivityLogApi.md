@@ -128,7 +128,7 @@ Name | Type | Description  | Notes
 ### HTTP request headers
 
  - **Content-Type**: application/json
- - **Accept**: raw
+ - **Accept**: text/csv
 
 <a name="trackingDownloadsIdGet"></a>
 # **trackingDownloadsIdGet**
