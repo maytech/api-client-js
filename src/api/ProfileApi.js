@@ -77,7 +77,7 @@
 
       var authNames = ['api_key'];
       var contentTypes = ['application/json'];
-      var accepts = ['application/json'];
+      var accepts = ['application/octet-stream'];
       var returnType = null;
 
       return this.apiClient.callApi(

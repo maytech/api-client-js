@@ -58,7 +58,7 @@ null (empty response body)
 ### HTTP request headers
 
  - **Content-Type**: application/json
- - **Accept**: application/json
+ - **Accept**: application/octet-stream
 
 <a name="profileGet"></a>
 # **profileGet**
