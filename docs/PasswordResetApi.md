@@ -20,13 +20,6 @@ Retrieve information about the password reset request.
 ### Example
 ```javascript
 var QuatrixApi = require('quatrix_api');
-var defaultClient = QuatrixApi.ApiClient.instance;
-
-// Configure API key authorization: api_key
-var api_key = defaultClient.authentications['api_key'];
-api_key.apiKey = 'YOUR API KEY';
-// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-//api_key.apiKeyPrefix = 'Token';
 
 var apiInstance = new QuatrixApi.PasswordResetApi();
 
@@ -55,7 +48,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[api_key](../README.md#api_key)
+No authorization required
 
 ### HTTP request headers
 
@@ -119,13 +112,6 @@ Change the password based on the existing password reset request.
 ### Example
 ```javascript
 var QuatrixApi = require('quatrix_api');
-var defaultClient = QuatrixApi.ApiClient.instance;
-
-// Configure API key authorization: api_key
-var api_key = defaultClient.authentications['api_key'];
-api_key.apiKey = 'YOUR API KEY';
-// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-//api_key.apiKeyPrefix = 'Token';
 
 var apiInstance = new QuatrixApi.PasswordResetApi();
 
@@ -157,7 +143,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[api_key](../README.md#api_key)
+No authorization required
 
 ### HTTP request headers
 

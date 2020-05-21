@@ -16,18 +16,18 @@
 (function(root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
-    define(['ApiClient', 'model/ErrorModel', 'model/IdResp', 'model/JobResp', 'model/ResetPasswordMetadataResp', 'model/ResetPasswordRequestReq', 'model/ResetPasswordRequestResp', 'model/ResetPasswordResetReq'], factory);
+    define(['ApiClient', 'model/ErrorModel', 'model/IdResp', 'model/InlineResponse202', 'model/ResetPasswordMetadataResp', 'model/ResetPasswordRequestReq', 'model/ResetPasswordRequestResp', 'model/ResetPasswordResetReq'], factory);
   } else if (typeof module === 'object' && module.exports) {
     // CommonJS-like environments that support module.exports, like Node.
-    module.exports = factory(require('../ApiClient'), require('../model/ErrorModel'), require('../model/IdResp'), require('../model/JobResp'), require('../model/ResetPasswordMetadataResp'), require('../model/ResetPasswordRequestReq'), require('../model/ResetPasswordRequestResp'), require('../model/ResetPasswordResetReq'));
+    module.exports = factory(require('../ApiClient'), require('../model/ErrorModel'), require('../model/IdResp'), require('../model/InlineResponse202'), require('../model/ResetPasswordMetadataResp'), require('../model/ResetPasswordRequestReq'), require('../model/ResetPasswordRequestResp'), require('../model/ResetPasswordResetReq'));
   } else {
     // Browser globals (root is window)
     if (!root.QuatrixApi) {
       root.QuatrixApi = {};
     }
-    root.QuatrixApi.PasswordResetApi = factory(root.QuatrixApi.ApiClient, root.QuatrixApi.ErrorModel, root.QuatrixApi.IdResp, root.QuatrixApi.JobResp, root.QuatrixApi.ResetPasswordMetadataResp, root.QuatrixApi.ResetPasswordRequestReq, root.QuatrixApi.ResetPasswordRequestResp, root.QuatrixApi.ResetPasswordResetReq);
+    root.QuatrixApi.PasswordResetApi = factory(root.QuatrixApi.ApiClient, root.QuatrixApi.ErrorModel, root.QuatrixApi.IdResp, root.QuatrixApi.InlineResponse202, root.QuatrixApi.ResetPasswordMetadataResp, root.QuatrixApi.ResetPasswordRequestReq, root.QuatrixApi.ResetPasswordRequestResp, root.QuatrixApi.ResetPasswordResetReq);
   }
-}(this, function(ApiClient, ErrorModel, IdResp, JobResp, ResetPasswordMetadataResp, ResetPasswordRequestReq, ResetPasswordRequestResp, ResetPasswordResetReq) {
+}(this, function(ApiClient, ErrorModel, IdResp, InlineResponse202, ResetPasswordMetadataResp, ResetPasswordRequestReq, ResetPasswordRequestResp, ResetPasswordResetReq) {
   'use strict';
 
   /**
@@ -83,7 +83,7 @@
       var formParams = {
       };
 
-      var authNames = ['api_key'];
+      var authNames = [];
       var contentTypes = ['application/json'];
       var accepts = ['application/json'];
       var returnType = ResetPasswordMetadataResp;
@@ -184,7 +184,7 @@
       var formParams = {
       };
 
-      var authNames = ['api_key'];
+      var authNames = [];
       var contentTypes = ['application/json'];
       var accepts = ['application/json'];
       var returnType = IdResp;

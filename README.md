@@ -337,6 +337,7 @@ Class | Method | HTTP request | Description
  - [QuatrixApi.IdsReq](docs/IdsReq.md)
  - [QuatrixApi.IdsResp](docs/IdsResp.md)
  - [QuatrixApi.InboxRespItems](docs/InboxRespItems.md)
+ - [QuatrixApi.InlineResponse202](docs/InlineResponse202.md)
  - [QuatrixApi.JobResp](docs/JobResp.md)
  - [QuatrixApi.KeyRequestMetadataResp](docs/KeyRequestMetadataResp.md)
  - [QuatrixApi.KeyRequestRespondReq](docs/KeyRequestRespondReq.md)
